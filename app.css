@@ -171,6 +171,51 @@ a{color:inherit}
 .cred{font-size:.86rem;padding-left:1.1em;max-width:44rem}
 .cred li{margin:5px 0}
 
+/* ---------- Galerie: Steine hängen frei auf dem Marmor, versetzt wie an einer Atelierwand ---------- */
+.hero{display:grid;gap:6px 40px}
+.logo{width:54px;height:54px;border-radius:14px;margin-bottom:22px}
+.hero h1{font-size:clamp(3.4rem,16vw,8.4rem);line-height:.86;margin:0 0 .22em -.03em}
+.hero .motto{font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-style:italic;font-size:clamp(1.35rem,5.4vw,1.9rem);line-height:1.1;color:var(--gold);margin:0 0 .6em}
+.hero .intro p:not(.motto){margin:0;max-width:27rem;color:var(--staub);font-size:1rem}
+@media (min-width:860px){.hero{grid-template-columns:1.5fr 1fr;align-items:end}.logo,.hero h1{grid-column:1}.hero .intro{grid-column:2;grid-row:2;padding-bottom:1.6rem}.hero h1{grid-row:2}}
+.tools{margin:34px 0 8px}
+.btn{background:var(--perle);box-shadow:none;font-weight:600}
+.btn.line{box-shadow:inset 0 0 0 1px var(--gold)}
+.seg{background:none;box-shadow:inset 0 0 0 1px var(--gold)}
+.txtbtn{background:none;box-shadow:inset 0 0 0 1px #d4b36a99}
+.filter{margin:18px 0 44px}
+
+.tray{background:none;box-shadow:none;padding:0;border-radius:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:38px 20px;align-items:start}
+.tile{background:none;padding:0;border-radius:0;text-align:left}
+.tile:nth-child(2n){margin-top:54px}
+@media (min-width:700px) and (max-width:1019px){.tray{grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 34px}.tile:nth-child(2n){margin-top:0}.tile:nth-child(3n+2){margin-top:70px}}
+@media (min-width:1020px){.tray{grid-template-columns:repeat(4,minmax(0,1fr));gap:64px 42px}.tile:nth-child(2n){margin-top:0}.tile:nth-child(4n+2){margin-top:84px}.tile:nth-child(4n+4){margin-top:42px}}
+.no{display:block;font-size:.7rem;letter-spacing:.18em;color:var(--gold);margin:0 0 7px 2px;font-variant-numeric:tabular-nums}
+.ph{background:var(--gold);filter:none}
+.phi{inset:1.5px}
+.tile b{font-style:italic;font-weight:400;font-size:clamp(1.75rem,7vw,2.3rem);line-height:.95;letter-spacing:-.02em;margin:-.3em 0 0 -.04em;position:relative;z-index:3;text-shadow:0 1px 3px #000c,0 3px 18px #000;hyphens:manual}
+.tile span.th{display:flex;align-items:center;gap:.7em;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;margin-top:8px}
+.tile .dot{margin:0;flex:none}
+.tile.pick{background:none}
+.tile.pick .ph{transform:scale(1.06) rotate(-2deg);box-shadow:none}
+.tile.pick b{color:var(--gold)}
+.tile.fav::after{top:26px;right:4px}
+
+/* Stein-Seite: Farbfläche in der Farbe des Steins */
+.sheet{background:color-mix(in srgb,var(--c) 26%,#121817)}
+.sheet::before{background:var(--marmor) 0 0/700px;opacity:.11}
+.bezel{background:var(--gold);padding:2px}
+.right .no{margin:0 0 10px 2px}
+.right h2{font-style:italic;font-size:clamp(3.3rem,15vw,6.4rem);line-height:.88;margin-left:-.03em}
+.thema{color:var(--perle);opacity:.8}
+.face{border-radius:4px;box-shadow:0 0 0 1px var(--gold)}
+.f-front{background:
+  linear-gradient(115deg,#ffffff22 0 22%,transparent 22%),
+  linear-gradient(245deg,#00000030 0 30%,transparent 30%),
+  linear-gradient(20deg,#00000038 0 26%,transparent 26%),
+  color-mix(in srgb,var(--c) 70%,#1a2220)}
+.opt{border-radius:4px;background:#0000002e;box-shadow:inset 0 0 0 1px #d4b36a66;font-style:italic;font-weight:400;font-size:1.35rem}
+
 ::view-transition-group(stein){animation-duration:.45s;animation-timing-function:cubic-bezier(.3,.8,.3,1)}
 ::view-transition-old(stein),::view-transition-new(stein){height:100%;object-fit:cover}
 

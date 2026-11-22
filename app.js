@@ -22,8 +22,8 @@
   function renderGrid() {
     S.forEach((s, i) => {
       const t = el(`<button class="tile" style="--c:${s.c};--i:${i}" data-id="${s.id}">
-        <span class="ph"><span class="phi"><img class="r" src="${img(s.id, 'r')}" alt="" loading="lazy"><img class="s" src="${img(s.id, 's')}" alt="" loading="lazy"></span></span>
-        <b>${s.name}</b><span class="th"><i class="dot"></i>${s.thema}</span></button>`);
+        <span class="no">Nº ${String(i + 1).padStart(2, '0')}</span><span class="ph"><span class="phi"><img class="r" src="${img(s.id, 'r')}" alt="" loading="lazy"><img class="s" src="${img(s.id, 's')}" alt="" loading="lazy"></span></span>
+        <b>${s.name.replace('Süsswasser', 'Süsswasser&shy;').replace('Berg', 'Berg&shy;').replace('Rosen', 'Rosen&shy;')}</b><span class="th"><i class="dot"></i>${s.thema}</span></button>`);
       t.onclick = () => { location.hash = s.id; };
       grid.append(t);
     });
@@ -87,6 +87,7 @@
           <p class="credit">${[credit(s.id, 'r', 'Foto ' + lab(s, 'r')), credit(s.id, 's', lab(s, 's'))].filter(Boolean).join('; ')}</p>
         </div>
         <div class="right">
+          <p class="no">Nº ${String(i + 1).padStart(2, '0')} von ${S.length}</p>
           <h2>${s.name}</h2>
           <p class="wort">${w.b}</p>
           <div class="thema">Steht für ${s.thema}</div>
