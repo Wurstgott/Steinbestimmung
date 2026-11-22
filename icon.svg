@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs>
+<radialGradient id="bg" cx=".7" cy=".1" r="1.1"><stop offset="0" stop-color="#34463f"/><stop offset=".6" stop-color="#1c2523"/><stop offset="1" stop-color="#121917"/></radialGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e3ad"/><stop offset=".28" stop-color="#b08a3e"/><stop offset=".52" stop-color="#f1d892"/><stop offset=".76" stop-color="#8c6c2e"/><stop offset="1" stop-color="#e8cf8c"/></linearGradient>
+<linearGradient id="tafel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a9eedd"/><stop offset=".45" stop-color="#4fb9a4"/><stop offset="1" stop-color="#1f7a6d"/></linearGradient>
+<radialGradient id="perle" cx=".32" cy=".28" r=".8"><stop offset="0" stop-color="#fff"/><stop offset=".24" stop-color="#f6f0e8"/><stop offset=".5" stop-color="#e2d6d2"/><stop offset=".78" stop-color="#b9b3c6"/><stop offset="1" stop-color="#8d8ea6"/></radialGradient>
+</defs>
+<rect width="512" height="512" fill="url(#bg)"/>
+<path d="M0 150c90-30 150 40 250 10s170-60 262-20M0 380c120-40 200 30 300 0s150-50 212-30" fill="none" stroke="#eef2ea" stroke-opacity=".08" stroke-width="5"/>
+<g stroke="#0d3b36" stroke-opacity=".35" stroke-width="2" stroke-linejoin="round">
+<polygon points="176,96 336,96 300,168 212,168" fill="#c9f5ea"/>
+<polygon points="336,96 416,176 344,212 300,168" fill="#8fe0cd"/>
+<polygon points="416,176 416,336 344,300 344,212" fill="#3fa694"/>
+<polygon points="416,336 336,416 300,344 344,300" fill="#1f6e63"/>
+<polygon points="336,416 176,416 212,344 300,344" fill="#17544c"/>
+<polygon points="176,416 96,336 168,300 212,344" fill="#22796c"/>
+<polygon points="96,336 96,176 168,212 168,300" fill="#55bfaa"/>
+<polygon points="96,176 176,96 212,168 168,212" fill="#a5ecda"/>
+<polygon points="212,168 300,168 344,212 344,300 300,344 212,344 168,300 168,212" fill="url(#tafel)"/>
+</g>
+<polygon points="212,168 300,168 344,212 168,212" fill="#fff" fill-opacity=".22"/>
+<polygon points="176,96 336,96 416,176 416,336 336,416 176,416 96,336 96,176" fill="none" stroke="url(#gold)" stroke-width="15" stroke-linejoin="round"/>
+<circle cx="398" cy="402" r="50" fill="#000" fill-opacity=".35"/>
+<circle cx="394" cy="396" r="48" fill="url(#perle)"/>
+</svg>
