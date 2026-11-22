@@ -3,41 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Steinbestimmung – Edelsteine entdecken</title>
-<meta name="description" content="25 Edelsteine spielerisch entdecken: roh und geschliffen, mit Bedeutung und Quiz.">
-<meta name="theme-color" content="#fbf8f4">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+<title>Steinbestimmung</title>
+<meta name="description" content="25 Edelsteine erkennen lernen: roh und geschliffen, mit Eselsbrücken, Namensherkunft, Sagen und Quiz.">
+<meta name="theme-color" content="#1d2725">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%231d2725'/><path d='M16 5l9 9-9 13-9-13z' fill='%23c8a55a'/></svg>">
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
 <main class="wrap" id="home">
   <header class="hero">
-    <h1>Steinbestimmung</h1>
-    <p>25 Schätze zum Entdecken – so, wie die Natur sie macht, und so, wie sie geschliffen funkeln.</p>
+    <h1>Stein&shy;bestimmung</h1>
+    <p>25 Steine aus dem Setzkasten. Jeder roh und geschliffen, mit einer Eselsbrücke, der Geschichte seines Namens und einer Sage.</p>
   </header>
 
-  <div class="actions">
-    <button class="btn" id="draw">🎲 Zieh einen Stein</button>
-    <button class="btn alt" id="quizBtn">🔍 Stein-Quiz</button>
+  <div class="tools">
+    <div class="seg" id="switch" role="group" aria-label="Ansicht">
+      <button data-v="r" aria-pressed="true">Natur</button>
+      <button data-v="s" aria-pressed="false">Geschliffen</button>
+    </div>
+    <button class="btn" id="draw">Zieh einen Stein</button>
+    <button class="btn line" id="quizBtn">Quiz starten</button>
   </div>
 
-  <div class="switch" id="switch" role="group" aria-label="Ansicht">
-    <button data-v="r" aria-pressed="true">Natur</button>
-    <button data-v="s" aria-pressed="false">Geschliffen</button>
-  </div>
-
-  <div class="chips" id="chips" role="group" aria-label="Was brauchst du heute?"></div>
-  <section class="grid" id="grid" aria-label="Alle Steine"></section>
+  <div class="filter" id="chips" role="group" aria-label="Filter"><span>Ich suche</span></div>
+  <section class="tray" id="grid" aria-label="Alle Steine"></section>
 
   <footer class="foot">
-    <p>Die Bedeutungen sind überlieferte Zuschreibungen – schön zum Träumen, aber kein Ersatz für ärztlichen Rat.</p>
-    <p><button id="credBtn">Bildnachweise</button></p>
+    <p>Die Bedeutungen sind überlieferte Zuschreibungen und kein Ersatz für ärztlichen Rat. <button id="credBtn">Bildnachweise</button></p>
   </footer>
 </main>
 
 <div id="overlay"></div>
 
 <script src="data.js"></script>
+<script src="wissen.js"></script>
 <script src="credits.js"></script>
 <script src="app.js"></script>
 </body>

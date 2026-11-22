@@ -54,3 +54,33 @@ Alle Fotos stammen von Wikimedia Commons und wurden für die App quadratisch zug
 | jade | schliff | Adam Kelliher / Rubble Rock and Gem | CC BY-SA 4.0 | [Tumbled nephrite jade, northern British Columbia.jpg](https://commons.wikimedia.org/wiki/File:Tumbled_nephrite_jade,_northern_British_Columbia.jpg) |
 | howlith | roh | Robert M. Lavinsky, iRocks.com | CC BY-SA 3.0 | [Howlite-122859.jpg](https://commons.wikimedia.org/wiki/File:Howlite-122859.jpg) |
 | howlith | schliff | Ra'ike | CC BY 3.0 | [Howlite - tumble polished stone.jpg](https://commons.wikimedia.org/wiki/File:Howlite_-_tumble_polished_stone.jpg) |
+
+## Eselsbrücken
+
+| Stein | Urheber | Lizenz | Quelle |
+|---|---|---|---|
+| abalone | Mister rf | CC BY-SA 4.0 | [Peacock feather close-up.jpg](https://commons.wikimedia.org/wiki/File:Peacock_feather_close-up.jpg) |
+| perle | Jörg Hempel | CC BY-SA 3.0 de | [Dew drops LC0107.jpg](https://commons.wikimedia.org/wiki/File:Dew_drops_LC0107.jpg) |
+| amethyst | Bill Williams | CC0 | [Future wine on vine (Unsplash).png](https://commons.wikimedia.org/wiki/File:Future_wine_on_vine_(Unsplash).png) |
+| amazonit | lubasi | CC BY-SA 2.0 | [Aerial view of the Amazon Rainforest.jpg](https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Amazon_Rainforest.jpg) |
+| granat | Thilagavathi Prakasam | CC BY-SA 4.0 | [Seeds of pomegranate.jpg](https://commons.wikimedia.org/wiki/File:Seeds_of_pomegranate.jpg) |
+| rubin | C-M | CC BY-SA 4.0 | [Erithacus rubecula profile.jpg](https://commons.wikimedia.org/wiki/File:Erithacus_rubecula_profile.jpg) |
+| lapis | Wikimedia Commons | Public domain | [Ultramarinepigment.jpg](https://commons.wikimedia.org/wiki/File:Ultramarinepigment.jpg) |
+| aquamarin | Vyacheslav Argenberg | CC BY 4.0 | [Malapascua (island), Tropical beach, Philippines.jpg](https://commons.wikimedia.org/wiki/File:Malapascua_(island),_Tropical_beach,_Philippines.jpg) |
+| topas | VV94 | CC BY-SA 3.0 | [Four Aces.JPG](https://commons.wikimedia.org/wiki/File:Four_Aces.JPG) |
+| tigerauge | Appaloosa | CC BY 3.0 | [Portrait Panthera tigris altaica Bella Leipzig Zoo 2013.jpg](https://commons.wikimedia.org/wiki/File:Portrait_Panthera_tigris_altaica_Bella_Leipzig_Zoo_2013.jpg) |
+| blaufluss | Giles Laurent | CC BY-SA 4.0 | [035 Vertical panorama of the Milky Way during Perseids seen from Oeschinensee Photo by Giles Laurent.jpg](https://commons.wikimedia.org/wiki/File:035_Vertical_panorama_of_the_Milky_Way_during_Perseids_seen_from_Oeschinensee_Photo_by_Giles_Laurent.jpg) |
+| bergkristall | Olympic National Park | Public domain | [Ice winter icicle hurricane ridge (17095391237).jpg](https://commons.wikimedia.org/wiki/File:Ice_winter_icicle_hurricane_ridge_(17095391237).jpg) |
+| sodalith | Nikodem Nijaki | CC BY-SA 3.0 | [Denim texture 02.jpg](https://commons.wikimedia.org/wiki/File:Denim_texture_02.jpg) |
+| jaspis | Dietmar Rabich | CC BY-SA 4.0 | [Münster, Park Sentmaring -- 2014 -- 3976.jpg](https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Park_Sentmaring_--_2014_--_3976.jpg) |
+| rosenquarz | Jon Sullivan | CC0 | [Pretty Pink Rose Closeup.jpg](https://commons.wikimedia.org/wiki/File:Pretty_Pink_Rose_Closeup.jpg) |
+| mondstein | Gregory H. Revera | CC BY-SA 3.0 | [FullMoon2010.jpg](https://commons.wikimedia.org/wiki/File:FullMoon2010.jpg) |
+| peridot | PattayaPatrol | CC BY-SA 4.0 | [DFC 3933 A close-up of a pile of pitted green olives showing their smooth glossy skins and hollow centers.jpg](https://commons.wikimedia.org/wiki/File:DFC_3933_A_close-up_of_a_pile_of_pitted_green_olives_showing_their_smooth_glossy_skins_and_hollow_centers.jpg) |
+| opalglas | Dietmar Rabich | CC BY-SA 4.0 | [Dülmen, Dernekamp, Seifenblase -- 2026 -- 082100.jpg](https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Dernekamp,_Seifenblase_--_2026_--_082100.jpg) |
+| karneol | B.navez | CC BY-SA 3.0 | [CornusMas Fruits 01.jpg](https://commons.wikimedia.org/wiki/File:CornusMas_Fruits_01.jpg) |
+| perlmutt | Serebit | CC BY-SA 4.0 | [Female mallard guarding her ducklings.jpg](https://commons.wikimedia.org/wiki/File:Female_mallard_guarding_her_ducklings.jpg) |
+| onyx | Mcheer372 | CC BY-SA 4.0 | [Yellow-eyed Black Cat.jpg](https://commons.wikimedia.org/wiki/File:Yellow-eyed_Black_Cat.jpg) |
+| aura | Rhododendrites | CC BY-SA 4.0 | [Ring-billed gull and a rainbow (52910).jpg](https://commons.wikimedia.org/wiki/File:Ring-billed_gull_and_a_rainbow_(52910).jpg) |
+| labradorit | Hauke Musicaloris | CC BY 4.0 | [Red light, green light - Aurora Borealis spanning the whole sky in fisheye (55070094453).jpg](https://commons.wikimedia.org/wiki/File:Red_light,_green_light_-_Aurora_Borealis_spanning_the_whole_sky_in_fisheye_(55070094453).jpg) |
+| jade | Krzysztof Golik | CC BY-SA 4.0 | [Green apple 02.jpg](https://commons.wikimedia.org/wiki/File:Green_apple_02.jpg) |
+| howlith | Larry Lamsa | CC BY 2.0 | [Howling - Great Sound! (48846829578).jpg](https://commons.wikimedia.org/wiki/File:Howling_-_Great_Sound!_(48846829578).jpg) |
