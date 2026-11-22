@@ -12,6 +12,6 @@ Eine kleine, verspielte Web-App zu 25 Edel- und Schmucksteinen: jeder Stein als 
 
 Reines HTML, CSS und JavaScript ohne Build-Schritt. Läuft über GitHub Pages (Branch `main`, Ordner `/`).
 
-Fotos: Wikimedia Commons, siehe [BILDNACHWEISE.md](BILDNACHWEISE.md). Schriften: Bodoni Moda und Instrument Sans (SIL Open Font License).
+Fotos: Wikimedia Commons, siehe [BILDNACHWEISE.md](BILDNACHWEISE.md). Schriften: Jost (SIL Open Font License), selbst gehostet.
 
 Die Bedeutungen der Steine sind überlieferte Zuschreibungen und kein Ersatz für ärztlichen Rat.
