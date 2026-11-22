@@ -12,9 +12,9 @@ window.CREDITS = {
    "url": "https://commons.wikimedia.org/wiki/File:Abalone-Paua-Shell-Pieces-AlbionFireandIce-0475.jpg"
   },
   "e": {
-   "autor": "Mister rf",
-   "lizenz": "CC BY-SA 4.0",
-   "url": "https://commons.wikimedia.org/wiki/File:Peacock_feather_close-up.jpg"
+   "autor": "אנדר-ויק (he.wikipedia)",
+   "lizenz": "Public domain",
+   "url": "https://commons.wikimedia.org/wiki/File:Closeup_of_a_human_ear.jpg"
   }
  },
  "perle": {
@@ -29,9 +29,9 @@ window.CREDITS = {
    "url": "https://commons.wikimedia.org/wiki/File:Strands_of_freshwater_pearls_threaded_on_silk.jpg"
   },
   "e": {
-   "autor": "Jörg Hempel",
-   "lizenz": "CC BY-SA 3.0 de",
-   "url": "https://commons.wikimedia.org/wiki/File:Dew_drops_LC0107.jpg"
+   "autor": "Rhododendrites",
+   "lizenz": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:D%27anjou_pear.jpg"
   }
  },
  "amethyst": {
@@ -148,9 +148,9 @@ window.CREDITS = {
    "url": "https://commons.wikimedia.org/wiki/File:Blue_topaz_7.jpg"
   },
   "e": {
-   "autor": "VV94",
-   "lizenz": "CC BY-SA 3.0",
-   "url": "https://commons.wikimedia.org/wiki/File:Four_Aces.JPG"
+   "autor": "john bateson",
+   "lizenz": "CC BY-SA 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Arctic_Sea_fog_at_Garths_Voe_-_geograph.org.uk_-_1739454.jpg"
   }
  },
  "tigerauge": {
@@ -182,9 +182,9 @@ window.CREDITS = {
    "url": "https://commons.wikimedia.org/wiki/File:Tumble_Polished_Blue_Goldstone_.JPG"
   },
   "e": {
-   "autor": "Giles Laurent",
+   "autor": "Andre Carrotflower",
    "lizenz": "CC BY-SA 4.0",
-   "url": "https://commons.wikimedia.org/wiki/File:035_Vertical_panorama_of_the_Milky_Way_during_Perseids_seen_from_Oeschinensee_Photo_by_Giles_Laurent.jpg"
+   "url": "https://commons.wikimedia.org/wiki/File:Corning_Museum_of_Glass_-_20220312_-_03_-_Hot_Glass_Show.jpg"
   }
  },
  "bergkristall": {
@@ -216,9 +216,9 @@ window.CREDITS = {
    "url": "https://commons.wikimedia.org/wiki/File:Sodalite_ball_2.jpg"
   },
   "e": {
-   "autor": "Nikodem Nijaki",
-   "lizenz": "CC BY-SA 3.0",
-   "url": "https://commons.wikimedia.org/wiki/File:Denim_texture_02.jpg"
+   "autor": "Prosthetic Head",
+   "lizenz": "CC BY-SA 4.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Salt_Crystals_macro.jpg"
   }
  },
  "jaspis": {
@@ -233,9 +233,9 @@ window.CREDITS = {
    "url": "https://commons.wikimedia.org/wiki/File:Jasper_Tugaru_Nishikiishi_Japan_IMG_8861.jpg"
   },
   "e": {
-   "autor": "Dietmar Rabich",
-   "lizenz": "CC BY-SA 4.0",
-   "url": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster,_Park_Sentmaring_--_2014_--_3976.jpg"
+   "autor": "SarKaLay",
+   "lizenz": "CC0",
+   "url": "https://commons.wikimedia.org/wiki/File:%E1%80%84%E1%80%AF%E1%80%B6%E1%80%B8%E1%80%A5.jpg"
   }
  },
  "rosenquarz": {
@@ -301,9 +301,9 @@ window.CREDITS = {
    "url": "https://commons.wikimedia.org/wiki/File:%22Opalite%22_-_manmade_opalescent_glass_6.jpg"
   },
   "e": {
-   "autor": "Dietmar Rabich",
-   "lizenz": "CC BY-SA 4.0",
-   "url": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Dernekamp,_Seifenblase_--_2026_--_082100.jpg"
+   "autor": "James St. John",
+   "lizenz": "CC BY 2.0",
+   "url": "https://commons.wikimedia.org/wiki/File:Precious_opal_(Coober_Pedy_Opal_Field,_South_Australia).jpg"
   }
  },
  "karneol": {
@@ -403,9 +403,9 @@ window.CREDITS = {
    "url": "https://commons.wikimedia.org/wiki/File:Tumbled_nephrite_jade,_northern_British_Columbia.jpg"
   },
   "e": {
-   "autor": "Krzysztof Golik",
+   "autor": "Tiia Monto",
    "lizenz": "CC BY-SA 4.0",
-   "url": "https://commons.wikimedia.org/wiki/File:Green_apple_02.jpg"
+   "url": "https://commons.wikimedia.org/wiki/File:Kidney_beans_2.jpg"
   }
  },
  "howlith": {
@@ -420,9 +420,9 @@ window.CREDITS = {
    "url": "https://commons.wikimedia.org/wiki/File:Howlite_-_tumble_polished_stone.jpg"
   },
   "e": {
-   "autor": "Larry Lamsa",
-   "lizenz": "CC BY 2.0",
-   "url": "https://commons.wikimedia.org/wiki/File:Howling_-_Great_Sound!_(48846829578).jpg"
+   "autor": "Jstuby",
+   "lizenz": "Public domain",
+   "url": "https://commons.wikimedia.org/wiki/File:Rugose2.jpg"
   }
  }
 };

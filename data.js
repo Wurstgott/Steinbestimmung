@@ -38,7 +38,7 @@ window.STEINE = [
   fakt:'Bergkristall ist reiner, farbloser Quarz – der Stoff, aus dem auch Sand besteht.'},
  {id:'sodalith', name:'Sodalith', thema:'Entschlossenheit', c:'#27408b',
   text:'Tiefblau mit weißen Adern. Er steht für klares Denken, Selbstvertrauen und den Mut, die eigene Wahrheit auszusprechen – und dranzubleiben.',
-  fakt:'Manche Sodalithe leuchten unter UV-Licht kräftig orange.'},
+  fakt:'Mit seinen hellen Fäden sieht er aus wie verwaschener Jeansstoff. Manche Sodalithe leuchten unter UV-Licht orange.'},
  {id:'jaspis', name:'Bunt-Jaspis', thema:'Ausgeglichenheit', c:'#b5532a',
   text:'Kein Jaspis gleicht dem anderen. Er steht für Erdung: ruhige Stimmung, innere Stabilität und Vertrauen ins eigene Tempo.',
   fakt:'Jaspis ist feinkörniger Quarz, den Beimengungen rot, gelb, grün oder braun färben.'},

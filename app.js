@@ -22,7 +22,7 @@
   function renderGrid() {
     S.forEach((s, i) => {
       const t = el(`<button class="tile" style="--c:${s.c};--i:${i}" data-id="${s.id}">
-        <span class="ph"><img class="r" src="${img(s.id, 'r')}" alt="" loading="lazy"><img class="s" src="${img(s.id, 's')}" alt="" loading="lazy"></span>
+        <span class="ph"><span class="phi"><img class="r" src="${img(s.id, 'r')}" alt="" loading="lazy"><img class="s" src="${img(s.id, 's')}" alt="" loading="lazy"></span></span>
         <b>${s.name}</b><span class="th"><i class="dot"></i>${s.thema}</span></button>`);
       t.onclick = () => { location.hash = s.id; };
       grid.append(t);
@@ -36,7 +36,7 @@
     chips.querySelectorAll('button').forEach((c) => c.setAttribute('aria-pressed', c.dataset.f === String(filter)));
   }
   function renderChips() {
-    [...M.map((m) => ({ f: m.n, t: m.n })), { f: 'fav', t: 'Gemerkte' }].forEach((c) => {
+    [...M.map((m) => ({ f: m.n, t: m.n })), { f: 'fav', t: 'Lieblinge' }].forEach((c) => {
       const b = el(`<button data-f="${c.f}" aria-pressed="false">${c.t}</button>`);
       b.onclick = () => { filter = filter === c.f ? null : c.f; applyFilter(); };
       chips.append(b);
@@ -73,14 +73,14 @@
     const canSpeak = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
     const v = el(`<div class="sheet" style="--c:${s.c}"><div class="in">
       <div class="bar"><button class="txtbtn back">Zurück</button>
-        <div class="r">${canSpeak ? '<button class="txtbtn say" aria-pressed="false">Vorlesen</button>' : ''}<button class="txtbtn heart" aria-pressed="false">Merken</button></div></div>
+        <div class="r">${canSpeak ? '<button class="txtbtn say" aria-pressed="false">Vorlesen</button>' : ''}<button class="txtbtn heart" aria-pressed="false">Zu den Lieblingen</button></div></div>
       <div class="cols">
         <div class="left">
-          <div class="stage">
+          <div class="bezel"><div class="stage">
             <img src="${img(s.id, 's')}" alt="${s.name}, ${lab(s, 's')}">
             <canvas aria-hidden="true"></canvas>
             <span class="tag"></span><span class="hint">Mit dem Finger blank reiben</span>
-          </div>
+          </div></div>
           <div class="under">
             <div class="seg" role="group" aria-label="Ansicht"><button data-v="r" aria-pressed="true">${lab(s, 'r')}</button><button data-v="s" aria-pressed="false">${lab(s, 's')}</button></div>
           </div>
@@ -88,13 +88,14 @@
         </div>
         <div class="right">
           <h2>${s.name}</h2>
-          <div class="thema">${s.thema}</div>
+          <p class="wort">${w.b}</p>
+          <div class="thema">Steht für ${s.thema}</div>
           <p class="lead">${s.text}</p>
           <section>
             <h3>Eselsbrücke</h3>
             <button class="flip" aria-pressed="false" aria-label="Eselsbrücke umdrehen">
               <span class="card">
-                <span class="face f-front"><span class="q">${w.q}</span><span class="go">Antippen zum Auflösen</span></span>
+                <span class="face f-front"><span class="q">${w.q}</span><span class="wb">${s.name}: ${w.b}</span><span class="go">Antippen zum Auflösen</span></span>
                 <span class="face f-back"><img src="${img(s.id, 'e')}" alt="" loading="lazy"><span class="k">${w.k}</span></span>
               </span>
             </button>
@@ -151,14 +152,14 @@
     flip.onclick = () => { const on = flip.getAttribute('aria-pressed') !== 'true'; flip.setAttribute('aria-pressed', on); aufl.classList.toggle('on', on); };
 
     const heart = $('.heart', v);
-    const paint = () => { const on = favs.has(s.id); heart.textContent = on ? 'Gemerkt' : 'Merken'; heart.setAttribute('aria-pressed', on); };
+    const paint = () => { const on = favs.has(s.id); heart.textContent = on ? 'Lieblingsstein' : 'Zu den Lieblingen'; heart.setAttribute('aria-pressed', on); };
     heart.onclick = () => { favs.has(s.id) ? favs.delete(s.id) : favs.add(s.id); saveFavs(); paint(); paintFavs(); applyFilter(); };
     paint();
 
     const say = $('.say', v);
     if (say) say.onclick = () => {
       if (speaking) { stopSpeech(); say.setAttribute('aria-pressed', false); say.textContent = 'Vorlesen'; return; }
-      const txt = `${s.name}. ${s.thema}. ${s.text} Eselsbrücke: ${w.k}. ${w.t} Woher der Name kommt: ${w.n} ${w.s}`.replace(/[„“]/g, '');
+      const txt = `${s.name}. ${w.b}. Steht für ${s.thema}. ${s.text} Eselsbrücke: ${w.k}. ${w.t} Woher der Name kommt: ${w.n} ${w.s}`.replace(/[„“]/g, '');
       const u = new SpeechSynthesisUtterance(txt); u.lang = 'de-DE'; u.rate = 0.95;
       u.onend = u.onerror = () => { speaking = false; say.setAttribute('aria-pressed', false); say.textContent = 'Vorlesen'; };
       speaking = true; say.setAttribute('aria-pressed', true); say.textContent = 'Stopp'; speechSynthesis.speak(u);
@@ -184,7 +185,7 @@
       const s = rounds[n], k = Math.random() < 0.5 ? 'r' : 's', w = W[s.id] || {};
       const opts = shuffle([s, ...shuffle(S.filter((x) => x !== s)).slice(0, 3)]);
       body.innerHTML = `<div class="qhead"><span>Stein ${n + 1} von ${rounds.length}</span><span class="sc">${score} richtig</span></div>
-        <div class="stage"><img src="${img(s.id, k)}" alt="Welcher Stein ist das?"><img class="tipp" src="${img(s.id, 'e')}" alt=""><span class="tag">${lab(s, k)}</span></div>
+        <div class="bezel"><div class="stage"><img src="${img(s.id, k)}" alt="Welcher Stein ist das?"><img class="tipp" src="${img(s.id, 'e')}" alt=""><span class="tag">${lab(s, k)}</span></div></div>
         <div class="opts">${opts.map((o) => `<button class="opt" data-id="${o.id}">${o.name}</button>`).join('')}</div>
         <div class="qmsg" aria-live="polite"><p>Welcher Stein ist das?</p><button class="txtbtn tip">Eselsbrücken-Bild zeigen</button></div>`;
       const msg = $('.qmsg', body), stage = $('.stage', body), tip = $('.tipp', body);
@@ -197,12 +198,12 @@
         if (!ok) body.querySelector(`.opt[data-id="${s.id}"]`).classList.add('ok');
         tip.classList.remove('on'); $('.tag', body).hidden = false;
         if (ok) { score++; $('.sc', body).textContent = score + ' richtig'; stage.classList.add('gleam'); }
-        msg.innerHTML = `<p><strong>${ok ? 'Richtig.' : 'Das ist ' + s.name + '.'}</strong> Eselsbrücke: ${w.k}.</p><button class="btn">${n + 1 < rounds.length ? 'Nächster Stein' : 'Ergebnis ansehen'}</button>`;
+        msg.innerHTML = `<p><strong>${ok ? 'Richtig, ' + s.name + '.' : 'Das ist ' + s.name + '.'}</strong> ${w.b}. Eselsbrücke: ${w.k}.</p><button class="btn">${n + 1 < rounds.length ? 'Nächster Stein' : 'Ergebnis ansehen'}</button>`;
         const nb = $('.btn', msg); nb.onclick = () => { n++; round(); }; nb.focus();
       });
     }
     function finish() {
-      const t = score === rounds.length ? 'Alle erkannt.' : score >= 5 ? 'Gutes Auge.' : 'Die Eselsbrücken helfen beim nächsten Mal.';
+      const t = score === rounds.length ? 'Alle erkannt – ein echtes Steinauge.' : score >= 5 ? 'Schön, du hast ein gutes Auge.' : 'Das wird. Die Eselsbrücken helfen beim nächsten Mal.';
       body.innerHTML = `<div class="result"><div class="big">${score} von ${rounds.length}</div><h3>${t}</h3>
         <div class="tools"><button class="btn again">Noch eine Runde</button><button class="btn line home">Zurück zum Kasten</button></div></div>`;
       $('.again', body).onclick = openQuiz; $('.home', body).onclick = close;
