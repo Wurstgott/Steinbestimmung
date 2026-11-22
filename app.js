@@ -218,6 +218,7 @@
     const v = el(`<div class="sheet"><div class="in">
       <div class="bar"><button class="txtbtn back">Zurück</button></div>
       <div class="right"><h2>Bildnachweise</h2>
+      <p class="wort">Idee, Auswahl und Gestaltung: Carlo Maximilian Engeländer</p>
       <p class="lead" style="margin-top:1em">Alle Fotos stammen von Wikimedia Commons und wurden für die App zugeschnitten und verkleinert.</p></div>
       <ul class="cred">${li}</ul></div></div>`);
     overlay.replaceChildren(v); document.body.style.overflow = 'hidden';
@@ -256,6 +257,9 @@
   }
   addEventListener('hashchange', route);
   addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.firstChild) close(); });
+
+  const pp = $('#paypal');
+  if (pp && /^https:\/\/(www\.)?paypal\.(me|com)\//.test(window.PAYPAL || '')) { pp.href = window.PAYPAL; pp.hidden = false; }
 
   renderChips(); renderGrid(); route();
 })();

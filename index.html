@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Steinbestimmung</title>
 <meta name="description" content="25 Edelsteine erkennen lernen: roh und geschliffen, mit Eselsbrücken, Namensherkunft, Sagen und Quiz.">
+<meta name="author" content="Carlo Maximilian Engeländer">
 <meta name="theme-color" content="#1c2523">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-180.png">
@@ -12,7 +13,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Steine">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
@@ -37,13 +38,19 @@
 
   <div class="perlen" aria-hidden="true"><i></i><i></i><i></i></div>
   <footer class="foot">
-    <p><em>Mit Liebe zu Steinen gesammelt.</em></p>
+    <p><em>Mit Liebe zu Steinen gesammelt von</em></p>
+    <p class="von">Carlo Maximilian Engeländer</p>
+    <a class="btn pp" id="paypal" href="#" target="_blank" rel="noopener" hidden>Mit PayPal Danke sagen</a>
     <p>Die Bedeutungen sind überlieferte Zuschreibungen und kein Ersatz für ärztlichen Rat. <button id="credBtn">Bildnachweise</button></p>
   </footer>
 </main>
 
 <div id="overlay"></div>
 
+<script>
+// PayPal-Link von Carlo, z. B. "https://paypal.me/DEINNAME". Leer = Knopf bleibt ausgeblendet.
+window.PAYPAL = "";
+</script>
 <script src="data.js"></script>
 <script src="wissen.js"></script>
 <script src="credits.js"></script>

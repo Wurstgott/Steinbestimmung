@@ -1,6 +1,6 @@
-@font-face{font-family:Bricolage;src:url(fonts/bricolage.woff2) format("woff2");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
-@font-face{font-family:Fraunces;src:url(fonts/fraunces.woff2) format("woff2");font-weight:100 900;font-display:swap}
-@font-face{font-family:Fraunces;font-style:italic;src:url(fonts/fraunces-italic.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:Bodoni;src:url(fonts/bodoni.woff2) format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:Bodoni;font-style:italic;src:url(fonts/bodoni-italic.woff2) format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:Instrument;src:url(fonts/instrument.woff2) format("woff2");font-weight:400 700;font-display:swap}
 
 :root{
   --stein:#1c2523; --samt:#283532; --fuge:#121917; --perle:#f3eee6; --staub:#a9b4ad; --gold:#d4b36a;
@@ -12,7 +12,7 @@
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{background:var(--stein)}
-body{margin:0;color:var(--perle);font:400 1rem/1.55 Bricolage,system-ui,sans-serif;min-height:100vh;position:relative;z-index:0}
+body{margin:0;color:var(--perle);font:400 1rem/1.6 Instrument,system-ui,sans-serif;font-optical-sizing:auto;min-height:100vh;position:relative;z-index:0}
 /* Marmorgrund: helle Adern auf dunklem Stein */
 body::before,.sheet::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:var(--marmor) 0 0/700px,radial-gradient(70rem 40rem at 85% -10%,#34463f 0,transparent 65%);opacity:.14}
@@ -26,10 +26,10 @@ a{color:inherit}
 
 /* Kopf */
 .logo{display:block;width:72px;height:72px;border-radius:18px;margin-bottom:16px;box-shadow:0 0 0 1.5px #d4b36a70,0 14px 24px -14px #000}
-.hero h1{font-family:Fraunces,Georgia,serif;font-weight:560;font-size:clamp(2.6rem,12vw,5.6rem);line-height:.98;letter-spacing:-.015em;margin:0 0 .3em;
+.hero h1{font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-weight:400;font-style:italic;font-size:clamp(3rem,13.5vw,6.6rem);line-height:.92;letter-spacing:-.025em;margin:0 0 .28em;
   background:linear-gradient(100deg,#fffaf0 0%,#f1e2d6 30%,#d9d3e6 55%,#f3ead9 78%,#e7d2a2 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
-.hero p{margin:0;max-width:33rem;color:var(--staub);font-size:1.06rem}
-.hero em{font-family:Fraunces,Georgia,serif;font-style:italic;color:var(--perle)}
+.hero p{margin:0;max-width:31rem;color:var(--staub);font-size:1.04rem}
+.hero em{display:block;margin-top:.5em;font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-style:italic;font-size:1.3rem;color:var(--perle)}
 
 .tools{display:flex;flex-wrap:wrap;gap:12px 14px;align-items:center;margin:26px 0 8px}
 .btn{padding:11px 20px;border-radius:999px;font-weight:650;background:var(--perlmutt);color:#2b2a33;box-shadow:0 1px 0 #fff8 inset,0 8px 18px -10px #000;transition:transform .15s,filter .2s}
@@ -46,7 +46,7 @@ a{color:inherit}
 .seg.b::before{transform:translateX(100%)}
 
 .filter{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline;margin:16px 0 20px;color:var(--staub)}
-.filter span{font-family:Fraunces,Georgia,serif;font-style:italic}
+.filter span{font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-style:italic}
 .filter button{padding:4px 0;font-weight:600;color:var(--perle);border-bottom:1.5px solid transparent}
 .filter button[aria-pressed=true]{border-color:var(--gold);color:var(--gold)}
 
@@ -68,8 +68,8 @@ a{color:inherit}
 .phi::after,.stage::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
   background:linear-gradient(135deg,#ffffff38 0,#ffffff00 16%),linear-gradient(315deg,#00000045 0,#00000000 18%),linear-gradient(225deg,#ffffff1c 0,#ffffff00 12%)}
 .tile:hover .ph,.tile:focus-visible .ph{transform:scale(1.04) rotate(-1.2deg)}
-.tile b{display:block;font-family:Fraunces,Georgia,serif;font-weight:560;font-size:1.18rem;line-height:1.15;margin-top:10px}
-.tile span.th{display:block;color:var(--staub);font-size:.84rem;margin-top:1px}
+.tile b{display:block;font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-weight:500;font-size:1.28rem;line-height:1.1;letter-spacing:-.005em;margin-top:11px}
+.tile span.th{display:block;color:var(--staub);font-size:.8rem;letter-spacing:.02em;margin-top:3px}
 .tile .dot{display:inline-block;width:.5em;height:.5em;background:linear-gradient(135deg,#fff9,transparent 55%),var(--c);transform:rotate(45deg);margin-right:.5em;vertical-align:.08em}
 .tile.fav::after{content:"";position:absolute;top:7px;right:7px;width:13px;height:13px;border-radius:50%;background:var(--perlmutt);box-shadow:0 1px 3px #000a;z-index:3}
 
@@ -77,7 +77,9 @@ a{color:inherit}
 .perlen i{width:7px;height:7px;border-radius:50%;background:var(--perlmutt)}
 .perlen i:nth-child(2){width:11px;height:11px}
 .foot{color:var(--staub);font-size:.85rem;max-width:40rem;margin:0 auto;text-align:center}
-.foot em{font-family:Fraunces,Georgia,serif;font-size:1rem;color:var(--perle)}
+.foot em{font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-size:1.25rem;color:var(--perle)}
+.foot .von{font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-size:1.5rem;line-height:1.15;color:var(--perle);margin:.1em 0 .7em}
+.foot .pp{display:inline-block;text-decoration:none;margin:0 0 1.4em}
 .foot button{text-decoration:underline}
 
 /* Ansicht eines Steins */
@@ -105,11 +107,11 @@ a{color:inherit}
 .credit{font-size:.72rem;color:var(--staub);margin:10px 0 0;text-align:center}
 .right .credit{text-align:left}
 
-.right h2{font-family:Fraunces,Georgia,serif;font-weight:560;font-size:clamp(2.7rem,11.5vw,4.8rem);line-height:.98;letter-spacing:-.015em;margin:0}
-.wort{font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.3rem;line-height:1.25;color:var(--gold);margin:.35em 0 .5em;max-width:24rem}
-.thema{color:color-mix(in srgb,var(--c) 55%,#fff);font-weight:600;margin:0 0 1em}
-.lead{font-size:1.1rem;margin:0 0 1.4em;max-width:36rem}
-.right h3{font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:500;font-size:1.3rem;margin:0 0 .5em;color:var(--gold)}
+.right h2{font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-weight:400;font-size:clamp(3rem,13vw,5.4rem);line-height:.95;letter-spacing:-.025em;margin:0}
+.wort{font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-style:italic;font-size:1.42rem;line-height:1.2;color:var(--gold);margin:.4em 0 .5em;max-width:24rem}
+.thema{color:color-mix(in srgb,var(--c) 55%,#fff);font-weight:500;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 1.2em}
+.lead{font-size:1.08rem;margin:0 0 1.4em;max-width:36rem}
+.right h3{font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-style:italic;font-weight:400;font-size:1.55rem;letter-spacing:-.01em;margin:0 0 .5em;color:var(--gold)}
 .right section{padding:20px 0 22px;max-width:36rem;position:relative}
 .right section::before{content:"";position:absolute;top:0;left:0;width:54px;height:7px;
   background:radial-gradient(circle at 3.5px 3.5px,#f6f0e8 0 2.6px,transparent 3.2px) 0 0/12px 7px repeat-x;opacity:.75}
@@ -128,7 +130,7 @@ a{color:inherit}
   linear-gradient(20deg,#00000038 0 26%,transparent 26%),
   linear-gradient(160deg,transparent 62%,#ffffff14 62%),
   color-mix(in srgb,var(--c) 58%,#26302e)}
-.f-front .q{font-family:Fraunces,Georgia,serif;font-weight:560;font-size:clamp(1.6rem,6.6vw,2.2rem);line-height:1.1;max-width:13em;text-shadow:0 1px 10px #0006}
+.f-front .q{font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-weight:500;font-size:clamp(1.6rem,6.6vw,2.2rem);line-height:1.1;max-width:13em;text-shadow:0 1px 10px #0006}
 .f-front .wb{display:none}
 .f-front .go{font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.6em}
 .f-front .go::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--perlmutt);box-shadow:0 1px 3px #0008}
@@ -136,7 +138,7 @@ a{color:inherit}
 .f-back img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.12)}
 .flip[aria-pressed=true] .f-back img{animation:drift 14s ease-out forwards}
 @keyframes drift{to{transform:scale(1)}}
-.f-back .k{position:absolute;left:0;right:0;bottom:0;padding:46px 18px 14px;background:linear-gradient(transparent,#000c);font-family:Fraunces,Georgia,serif;font-weight:560;font-size:clamp(1.35rem,5.4vw,1.75rem);line-height:1.1;color:#fff}
+.f-back .k{position:absolute;left:0;right:0;bottom:0;padding:46px 18px 14px;background:linear-gradient(transparent,#000c);font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-weight:500;font-size:clamp(1.35rem,5.4vw,1.75rem);line-height:1.1;color:#fff}
 .aufl{overflow:hidden;display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s .35s}
 .aufl > div{min-height:0}
 .aufl.on{grid-template-rows:1fr}
@@ -152,7 +154,7 @@ a{color:inherit}
 .quiz .bezel{view-transition-name:none}
 .qhead{display:flex;justify-content:space-between;font-weight:600;color:var(--staub);margin:0 0 12px}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
-.opt{padding:14px 10px;border-radius:999px;background:var(--samt);box-shadow:inset 0 0 0 1.5px #d4b36a40;font-family:Fraunces,Georgia,serif;font-weight:560;font-size:1.15rem;text-align:center;transition:background .25s,color .25s}
+.opt{padding:14px 10px;border-radius:999px;background:var(--samt);box-shadow:inset 0 0 0 1.5px #d4b36a40;font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-weight:500;font-size:1.15rem;text-align:center;transition:background .25s,color .25s}
 .opt:hover{box-shadow:inset 0 0 0 1.5px var(--gold)}
 .opt.ok{background:#3f9b6d;color:#fff;box-shadow:none}
 .opt.no{background:#b5483f;color:#fff;box-shadow:none;animation:shake .35s}
@@ -162,8 +164,8 @@ a{color:inherit}
 .tipp{opacity:0;transition:opacity .5s;pointer-events:none}
 .tipp.on{opacity:1}
 .result{padding:34px 0;text-align:center}
-.result .big{font-family:Fraunces,Georgia,serif;font-weight:560;font-size:5rem;line-height:1;color:var(--gold)}
-.result h3{font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:500;font-size:1.5rem;margin:.3em 0 1em}
+.result .big{font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-weight:500;font-size:5rem;line-height:1;color:var(--gold)}
+.result h3{font-family:Bodoni,"Bodoni 72",Didot,Georgia,serif;font-style:italic;font-weight:500;font-size:1.5rem;margin:.3em 0 1em}
 .result .tools{margin-top:0;justify-content:center}
 
 .cred{font-size:.86rem;padding-left:1.1em;max-width:44rem}
