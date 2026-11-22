@@ -226,3 +226,5 @@ h1,h2,h3,p{margin:0}
 ::view-transition-old(stein),::view-transition-new(stein){height:100%;object-fit:cover}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after,::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important;transition:none!important}}
+
+.foot .stand{font-size:.72rem;opacity:.6;margin-top:1.2em}
