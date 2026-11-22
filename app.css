@@ -228,3 +228,63 @@ h1,h2,h3,p{margin:0}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after,::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important;transition:none!important}}
 
 .foot .stand{font-size:.72rem;opacity:.6;margin-top:1.2em}
+
+/* ---------- Spielen ---------- */
+.bar .mt{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--staub)}
+.hub{padding:26px 0 40px}
+.hub h2,.frage b{font-weight:300;font-size:clamp(2.3rem,10vw,3.2rem);line-height:1.08;letter-spacing:.01em;margin:0;color:var(--perle);display:block;overflow-wrap:anywhere;hyphens:auto}
+.rang{color:var(--staub);margin:.8em auto 0}
+.rang strong{font-weight:500;color:var(--gold)}
+.quiz .klein{font-size:.8125rem;line-height:1.6;color:var(--staub);max-width:22rem;margin:0 auto;text-wrap:balance}
+.engl{color:var(--staub);margin:.9em auto 0;display:flex;gap:.6em;align-items:center;justify-content:center;flex-wrap:wrap}
+.engl strong{font-weight:500;color:var(--perle)}
+.hoer{padding:5px 12px!important;font-size:.68rem!important}
+
+/* Perlenkette: jede Perle ein Stein */
+.kette{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;max-width:19rem;margin:28px auto 16px}
+.kette i{width:15px;height:15px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--linie);transition:transform .4s var(--feder)}
+.kette i.l1,.kette i.l2,.kette i.l3{box-shadow:0 1px 3px #0008;background:radial-gradient(circle at 32% 28%,#fff 0,color-mix(in srgb,var(--c) 45%,#fff) 34%,var(--c) 78%,color-mix(in srgb,var(--c) 70%,#000) 100%)}
+.kette i.l3{box-shadow:0 0 0 1.5px var(--gold),0 1px 3px #0008}
+.kette i.neu{animation:perle .9s var(--feder) backwards}
+.kette i.neu:nth-child(odd){animation-delay:.15s}
+@keyframes perle{0%{transform:scale(0)}60%{transform:scale(1.5)}100%{transform:scale(1)}}
+
+.modi{display:grid;gap:10px;margin-top:34px}
+.modus{display:block;text-align:center;padding:20px 18px 18px;border-radius:14px;box-shadow:inset 0 0 0 1px var(--linie);transition:box-shadow .2s,background .2s}
+.modus:hover{box-shadow:inset 0 0 0 1px var(--gold);background:#ffffff08}
+.modus b{display:block;font-weight:400;font-size:1.35rem;letter-spacing:.01em;color:var(--perle)}
+.modus span{display:block;color:var(--staub);font-size:.95rem;line-height:1.45;margin:.3em auto 0;max-width:19rem;text-wrap:balance}
+.modus small{display:block;margin-top:.9em;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+
+.qhead{align-items:baseline}
+.qhead .serie{color:var(--perle)}
+.qhead .pop{animation:pop .45s var(--feder)}
+@keyframes pop{40%{transform:scale(1.25)}}
+.qhead span{display:inline-block}
+.frage{padding:26px 0 6px}
+.frage small{display:block;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--staub);margin-bottom:.9em}
+.frage .hoer{margin-top:16px}
+.bezel.mini{width:132px!important;margin-top:18px}
+.bezel.mini.tipp{display:none;opacity:1}
+.bezel.mini.tipp.on{display:block;animation:auf .45s ease-out}
+@keyframes auf{from{opacity:0;transform:scale(.9)}}
+.opts.bilder{gap:18px 14px}
+.opt.bild{border-radius:0;box-shadow:none;padding:0;white-space:normal;background:none!important;color:inherit!important;display:block}
+.opt.bild .ph{width:min(100%,150px);margin:0 auto 9px}
+.opt.bild > span:last-child{display:block;font-size:1rem}
+.opt.bild.ok .ph{background:#49c486;transform:scale(1.05)}
+.opt.bild.ok .phi{inset:3px}
+.opt.bild.no .ph{background:#d0574d}
+.opt.bild.no .phi{inset:3px}
+.opt.bild.no{opacity:.75}
+.opt{position:relative}
+.opt.ok{animation:richtig .5s var(--feder)}
+@keyframes richtig{35%{transform:scale(1.06)}}
+.plus{position:absolute;left:50%;top:-6px;translate:-50% 0;font-size:.9rem;font-weight:500;color:var(--gold);pointer-events:none;animation:hoch 1s ease-out forwards;text-shadow:0 1px 6px #000}
+@keyframes hoch{0%{opacity:0;transform:translateY(8px)}20%{opacity:1}100%{opacity:0;transform:translateY(-34px)}}
+.funken{position:fixed;z-index:50;pointer-events:none}
+.funken i{position:absolute;left:-4px;top:-4px;width:8px;height:8px;transform:rotate(45deg);opacity:0;animation:funke .85s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes funke{0%{opacity:1;transform:translate(0,0) rotate(45deg) scale(.4)}70%{opacity:1}100%{opacity:0;transform:translate(var(--x),var(--y)) rotate(200deg) scale(1)}}
+.result .rang{margin:0 auto}
+.result .tools{margin-top:30px}
+@media (prefers-reduced-motion:reduce){.kette i.neu,.plus,.opt.ok,.qhead .pop{animation:none!important}}
