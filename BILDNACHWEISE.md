@@ -84,3 +84,87 @@ Alle Fotos stammen von Wikimedia Commons und wurden für die App quadratisch zug
 | labradorit | Hauke Musicaloris | CC BY 4.0 | [Red light, green light - Aurora Borealis spanning the whole sky in fisheye (55070094453).jpg](https://commons.wikimedia.org/wiki/File:Red_light,_green_light_-_Aurora_Borealis_spanning_the_whole_sky_in_fisheye_(55070094453).jpg) |
 | jade | Tiia Monto | CC BY-SA 4.0 | [Kidney beans 2.jpg](https://commons.wikimedia.org/wiki/File:Kidney_beans_2.jpg) |
 | howlith | Jstuby | Public domain | [Rugose2.jpg](https://commons.wikimedia.org/wiki/File:Rugose2.jpg) |
+
+## Weitere Ansichten
+
+| Stein | Ansicht | Urheber | Lizenz | Quelle |
+|---|---|---|---|---|
+| abalone | roh 2 | Jan Delsing | Public domain | [Haliotis iris shell 2.jpg](https://commons.wikimedia.org/wiki/File:Haliotis_iris_shell_2.jpg) |
+| abalone | schliff 2 | Daderot | CC0 | [Abalone necklace, Miwok - Oakland Museum of California - DSC04942.JPG](https://commons.wikimedia.org/wiki/File:Abalone_necklace,_Miwok_-_Oakland_Museum_of_California_-_DSC04942.JPG) |
+| perle | roh 2 | Istara | CC BY 3.0 | [Cultured pearl oyster.jpg](https://commons.wikimedia.org/wiki/File:Cultured_pearl_oyster.jpg) |
+| perle | schliff 2 | James St. John | CC BY 2.0 | [Pearl from Pinctada maxima (gold-lipped pearl oyster) 2.jpg](https://commons.wikimedia.org/wiki/File:Pearl_from_Pinctada_maxima_(gold-lipped_pearl_oyster)_2.jpg) |
+| amethyst | roh 2 | Jyriorgan | CC BY-SA 3.0 | [Amethyst (purple).JPG](https://commons.wikimedia.org/wiki/File:Amethyst_(purple).JPG) |
+| amethyst | roh 3 | Ludvig14 | CC BY-SA 4.0 | [Amethyst-geode 020 7765.jpg](https://commons.wikimedia.org/wiki/File:Amethyst-geode_020_7765.jpg) |
+| amethyst | schliff 2 | W.carter | CC BY 4.0 | [Four faceted amethysts 2.jpg](https://commons.wikimedia.org/wiki/File:Four_faceted_amethysts_2.jpg) |
+| amethyst | schliff 3 | W.carter | CC BY 4.0 | [Four faceted amethysts 1.jpg](https://commons.wikimedia.org/wiki/File:Four_faceted_amethysts_1.jpg) |
+| amazonit | roh 2 | Bob Richmond | CC BY 2.0 | [Amazonite (8213232829).jpg](https://commons.wikimedia.org/wiki/File:Amazonite_(8213232829).jpg) |
+| amazonit | roh 3 | Animalculum | CC BY 4.0 | [Microcline var. Amazonite, Musee de Mineralogie, Paris, 2025.jpg](https://commons.wikimedia.org/wiki/File:Microcline_var._Amazonite,_Musee_de_Mineralogie,_Paris,_2025.jpg) |
+| granat | roh 2 | James St. John | CC BY 2.0 | [Almandine garnet (Late Cretaceous; Garnet Ledge, Alaska, USA) (31914805843).jpg](https://commons.wikimedia.org/wiki/File:Almandine_garnet_(Late_Cretaceous;_Garnet_Ledge,_Alaska,_USA)_(31914805843).jpg) |
+| granat | roh 3 | Rock Currier | CC BY 3.0 | [Almandine - Russel Garnet mine, Hampden County, Massachusetts, USA.jpg](https://commons.wikimedia.org/wiki/File:Almandine_-_Russel_Garnet_mine,_Hampden_County,_Massachusetts,_USA.jpg) |
+| granat | schliff 2 | Darla Sondrol | CC0 | [Rhodolite (GeoDIL number - 2752).jpg](https://commons.wikimedia.org/wiki/File:Rhodolite_(GeoDIL_number_-_2752).jpg) |
+| granat | schliff 3 | W.carter | CC BY 4.0 | [Four round faceted garnet gemstones 1.jpg](https://commons.wikimedia.org/wiki/File:Four_round_faceted_garnet_gemstones_1.jpg) |
+| rubin | roh 2 | Robert M. Lavinsky, iRocks.com | CC BY-SA 3.0 | [Corundum-215330.jpg](https://commons.wikimedia.org/wiki/File:Corundum-215330.jpg) |
+| rubin | roh 3 | Robert M. Lavinsky, iRocks.com | CC BY-SA 3.0 | [Corundum-winza-01c.jpg](https://commons.wikimedia.org/wiki/File:Corundum-winza-01c.jpg) |
+| rubin | schliff 2 | Wiener Edelstein Zentrum | CC BY-SA 3.0 | [Ruby heart 1.42cts.jpg](https://commons.wikimedia.org/wiki/File:Ruby_heart_1.42cts.jpg) |
+| rubin | schliff 3 | Wikimedia Commons | Public domain | [Cut Ruby.jpg](https://commons.wikimedia.org/wiki/File:Cut_Ruby.jpg) |
+| lapis | roh 2 | Robert M. Lavinsky, iRocks.com | CC BY-SA 3.0 | [Lazurite-34632.jpg](https://commons.wikimedia.org/wiki/File:Lazurite-34632.jpg) |
+| lapis | roh 3 | Robert M. Lavinsky, iRocks.com | CC BY-SA 3.0 | [Lazurite-119305.jpg](https://commons.wikimedia.org/wiki/File:Lazurite-119305.jpg) |
+| lapis | schliff 2 | W.carter | CC BY-SA 4.0 | [Tumble-polished lapis lazuli 2.jpg](https://commons.wikimedia.org/wiki/File:Tumble-polished_lapis_lazuli_2.jpg) |
+| lapis | schliff 3 | Aquinassixthway | CC0 | [Lapis lazuli oval set in silver ring.jpg](https://commons.wikimedia.org/wiki/File:Lapis_lazuli_oval_set_in_silver_ring.jpg) |
+| aquamarin | roh 2 | Robert M. Lavinsky, iRocks.com | CC BY-SA 3.0 | [Beryl-209736.jpg](https://commons.wikimedia.org/wiki/File:Beryl-209736.jpg) |
+| aquamarin | roh 3 | Robert M. Lavinsky, iRocks.com | CC BY-SA 3.0 | [Beryl-253990.jpg](https://commons.wikimedia.org/wiki/File:Beryl-253990.jpg) |
+| aquamarin | schliff 2 | Mauro Cateb | CC BY-SA 3.0 | [5 Brazilian aquamarine.JPG](https://commons.wikimedia.org/wiki/File:5_Brazilian_aquamarine.JPG) |
+| topas | roh 2 | Robert M. Lavinsky, iRocks.com | CC BY-SA 3.0 | [Topaz-265745.jpg](https://commons.wikimedia.org/wiki/File:Topaz-265745.jpg) |
+| topas | schliff 2 | Mauro Cateb | CC BY-SA 3.0 | [Blue topaz - a.JPG](https://commons.wikimedia.org/wiki/File:Blue_topaz_-_a.JPG) |
+| topas | schliff 3 | Gemsphoto | CC BY-SA 4.0 | [Natural blue topaz gemstone.jpg](https://commons.wikimedia.org/wiki/File:Natural_blue_topaz_gemstone.jpg) |
+| tigerauge | roh 2 | James St. John | CC BY 2.0 | [Tiger's eye quartz 7.jpg](https://commons.wikimedia.org/wiki/File:Tiger%27s_eye_quartz_7.jpg) |
+| tigerauge | roh 3 | James St. John | CC BY 2.0 | [Tiger's eye quartz 11.jpg](https://commons.wikimedia.org/wiki/File:Tiger%27s_eye_quartz_11.jpg) |
+| tigerauge | schliff 2 | James St. John | CC BY 2.0 | [Tiger's eye quartz 2 (23747476832).jpg](https://commons.wikimedia.org/wiki/File:Tiger%27s_eye_quartz_2_(23747476832).jpg) |
+| tigerauge | schliff 3 | Linas Juozėnas | CC BY-SA 4.0 | [Blue tiger eye - falcon eye.jpg](https://commons.wikimedia.org/wiki/File:Blue_tiger_eye_-_falcon_eye.jpg) |
+| blaufluss | roh 2 | James St. John | CC BY 2.0 | [Blue goldstone 11.jpg](https://commons.wikimedia.org/wiki/File:Blue_goldstone_11.jpg) |
+| blaufluss | roh 3 | James St. John | CC BY 2.0 | [Blue goldstone 6.jpg](https://commons.wikimedia.org/wiki/File:Blue_goldstone_6.jpg) |
+| blaufluss | schliff 2 | Stefan Zillig | CC BY-SA 2.0 de | [Blaufluss Aventuringlas.jpg](https://commons.wikimedia.org/wiki/File:Blaufluss_Aventuringlas.jpg) |
+| blaufluss | schliff 3 | RegionVisitor90 | CC0 | [Opal and Gemstone Studio, Hahndorf 20251219-122448.jpg](https://commons.wikimedia.org/wiki/File:Opal_and_Gemstone_Studio,_Hahndorf_20251219-122448.jpg) |
+| bergkristall | roh 2 | Robert M. Lavinsky, iRocks.com | CC BY-SA 3.0 | [Quartz-rhqtz-18a.jpg](https://commons.wikimedia.org/wiki/File:Quartz-rhqtz-18a.jpg) |
+| bergkristall | roh 3 | Robert M. Lavinsky, iRocks.com | CC BY-SA 3.0 | [Quartz-lc-167a.jpg](https://commons.wikimedia.org/wiki/File:Quartz-lc-167a.jpg) |
+| bergkristall | schliff 2 | Mauro Cateb | CC BY 2.0 | [Birmanian rock crystal (6997000297).jpg](https://commons.wikimedia.org/wiki/File:Birmanian_rock_crystal_(6997000297).jpg) |
+| bergkristall | schliff 3 | Mauro Cateb | CC BY-SA 3.0 | [Brazilian rock crystals.jpg](https://commons.wikimedia.org/wiki/File:Brazilian_rock_crystals.jpg) |
+| sodalith | roh 2 | Mike Davis | CC0 | [Sodalite syenite (GeoDIL number - 380).jpg](https://commons.wikimedia.org/wiki/File:Sodalite_syenite_(GeoDIL_number_-_380).jpg) |
+| sodalith | schliff 2 | W.carter | CC BY-SA 4.0 | [Drop-shaped sodalite 1.jpg](https://commons.wikimedia.org/wiki/File:Drop-shaped_sodalite_1.jpg) |
+| sodalith | schliff 3 | Maatpublishing | CC BY-SA 4.0 | [SodaliteCrystal.jpg](https://commons.wikimedia.org/wiki/File:SodaliteCrystal.jpg) |
+| jaspis | roh 2 | Darla Sondrol | CC0 | [Jasper (GeoDIL number - 2520).jpg](https://commons.wikimedia.org/wiki/File:Jasper_(GeoDIL_number_-_2520).jpg) |
+| jaspis | roh 3 | Petr Kinšt | CC BY-SA 3.0 | [NPP Doupňák - jaspis 1.jpg](https://commons.wikimedia.org/wiki/File:NPP_Doup%C5%88%C3%A1k_-_jaspis_1.jpg) |
+| jaspis | schliff 2 | あおもりくま、Aomorikuma | CC BY-SA 4.0 | [Red Jasper Tugaru Nishikiishi Japan IMG 8854.jpg](https://commons.wikimedia.org/wiki/File:Red_Jasper_Tugaru_Nishikiishi_Japan_IMG_8854.jpg) |
+| jaspis | schliff 3 | James St. John | CC BY 2.0 | [Tabu Tabu Jasper (South Africa) (41889473312).jpg](https://commons.wikimedia.org/wiki/File:Tabu_Tabu_Jasper_(South_Africa)_(41889473312).jpg) |
+| rosenquarz | roh 2 | Renardo la vulpo | CC0 | [Mineralogia München, Rosenquarz aus Namibia, 2.jpeg](https://commons.wikimedia.org/wiki/File:Mineralogia_M%C3%BCnchen,_Rosenquarz_aus_Namibia,_2.jpeg) |
+| rosenquarz | roh 3 | Darla Sondrol | CC0 | [Rose quartz (GeoDIL number - 2521).jpg](https://commons.wikimedia.org/wiki/File:Rose_quartz_(GeoDIL_number_-_2521).jpg) |
+| rosenquarz | schliff 2 | Mauro Cateb, edited by W.carter | CC BY 3.0 | [Rose quartz briolettes, edited.jpg](https://commons.wikimedia.org/wiki/File:Rose_quartz_briolettes,_edited.jpg) |
+| rosenquarz | schliff 3 | Mauro Cateb | CC BY 2.0 | [Rose quartz pebbles (6390230413).jpg](https://commons.wikimedia.org/wiki/File:Rose_quartz_pebbles_(6390230413).jpg) |
+| mondstein | roh 2 | Robert M. Lavinsky, iRocks.com | CC BY-SA 3.0 | [Adularia-157136.jpg](https://commons.wikimedia.org/wiki/File:Adularia-157136.jpg) |
+| mondstein | schliff 2 | Didier Descouens | CC BY-SA 4.0 | [Pierrelune.jpg](https://commons.wikimedia.org/wiki/File:Pierrelune.jpg) |
+| mondstein | schliff 3 | Ra'ike | CC BY 2.5 | [Moonstone cabochon ring.jpg](https://commons.wikimedia.org/wiki/File:Moonstone_cabochon_ring.jpg) |
+| peridot | roh 2 | Robert M. Lavinsky, iRocks.com | CC BY-SA 3.0 | [Olivine-gem7-10a.jpg](https://commons.wikimedia.org/wiki/File:Olivine-gem7-10a.jpg) |
+| peridot | roh 3 | Robert M. Lavinsky, iRocks.com | CC BY-SA 3.0 | [Forsterite-Olivine-4jg58d.jpg](https://commons.wikimedia.org/wiki/File:Forsterite-Olivine-4jg58d.jpg) |
+| peridot | schliff 2 | DonGuennie | CC BY-SA 4.0 | [Peridot-China.jpg](https://commons.wikimedia.org/wiki/File:Peridot-China.jpg) |
+| peridot | schliff 3 | W.carter | CC BY 4.0 | [Peridot briolettes.jpg](https://commons.wikimedia.org/wiki/File:Peridot_briolettes.jpg) |
+| opalglas | roh 2 | Bim24 | CC BY 4.0 | [Opalite is a man-made glass that is often used as a gemstone.jpg](https://commons.wikimedia.org/wiki/File:Opalite_is_a_man-made_glass_that_is_often_used_as_a_gemstone.jpg) |
+| opalglas | schliff 2 | James St. John | CC BY 2.0 | ["Opalite" - manmade opalescent glass 2.jpg](https://commons.wikimedia.org/wiki/File:%22Opalite%22_-_manmade_opalescent_glass_2.jpg) |
+| karneol | schliff 2 | W.carter | CC BY-SA 4.0 | [Four carnelian cabochons.jpg](https://commons.wikimedia.org/wiki/File:Four_carnelian_cabochons.jpg) |
+| karneol | schliff 3 | jaja_1985 | CC BY 2.0 | [Carnelian - tumble polished stone.jpg](https://commons.wikimedia.org/wiki/File:Carnelian_-_tumble_polished_stone.jpg) |
+| perlmutt | roh 2 | James St. John | CC BY 2.0 | [Nacreous aragonite ("mother-of-pearl") 7.jpg](https://commons.wikimedia.org/wiki/File:Nacreous_aragonite_(%22mother-of-pearl%22)_7.jpg) |
+| perlmutt | schliff 2 | Mauro Cateb | CC BY-SA 3.0 | [Nacre sticks.JPG](https://commons.wikimedia.org/wiki/File:Nacre_sticks.JPG) |
+| onyx | schliff 2 | W.carter | CC BY 4.0 | [Black oval onyx cabochons 2.jpg](https://commons.wikimedia.org/wiki/File:Black_oval_onyx_cabochons_2.jpg) |
+| onyx | schliff 3 | Mark Somma | CC BY 2.0 | [Black onyx and diamonds ring.jpg](https://commons.wikimedia.org/wiki/File:Black_onyx_and_diamonds_ring.jpg) |
+| aura | roh 2 | Pacman | Public domain | [Aqua aura.jpg](https://commons.wikimedia.org/wiki/File:Aqua_aura.jpg) |
+| aura | schliff 2 | Furry yui | Public domain | [Cosmoaura Dragon's talon.jpg](https://commons.wikimedia.org/wiki/File:Cosmoaura_Dragon%27s_talon.jpg) |
+| aura | schliff 3 | Furry yui | Public domain | [Angelaura b.jpg](https://commons.wikimedia.org/wiki/File:Angelaura_b.jpg) |
+| labradorit | roh 2 | Twyla Baker | CC0 | [Labradorite (GeoDIL number - 939).jpg](https://commons.wikimedia.org/wiki/File:Labradorite_(GeoDIL_number_-_939).jpg) |
+| labradorit | schliff 2 | James St. John | CC BY 2.0 | [Labradorite 4.jpg](https://commons.wikimedia.org/wiki/File:Labradorite_4.jpg) |
+| labradorit | schliff 3 | Maatpublishing | CC0 | [Blue flash Labradorite.jpg](https://commons.wikimedia.org/wiki/File:Blue_flash_Labradorite.jpg) |
+| jade | roh 2 | James St. John | CC BY 2.0 | [Nephrite jade (Precambrian) (Granite Mountains, Fremont County, Wyoming, USA) 5.jpg](https://commons.wikimedia.org/wiki/File:Nephrite_jade_(Precambrian)_(Granite_Mountains,_Fremont_County,_Wyoming,_USA)_5.jpg) |
+| jade | roh 3 | James St. John | CC BY 2.0 | [Nephrite jade ventifact (Precambrian; Granite Mountains, Wyoming, USA) 3 (24690945305).jpg](https://commons.wikimedia.org/wiki/File:Nephrite_jade_ventifact_(Precambrian;_Granite_Mountains,_Wyoming,_USA)_3_(24690945305).jpg) |
+| jade | schliff 2 | Lê Phạm Gia Hy | CC BY-SA 4.0 | [Siberian-nephrite-jade-bangle-vong-kieng-ngoc-bich-kimquigems.jpg](https://commons.wikimedia.org/wiki/File:Siberian-nephrite-jade-bangle-vong-kieng-ngoc-bich-kimquigems.jpg) |
+| jade | schliff 3 | Sarah J Y Wong | CC BY-SA 4.0 | [Imperial Green Jadeite Diamond Ring.png](https://commons.wikimedia.org/wiki/File:Imperial_Green_Jadeite_Diamond_Ring.png) |
+| howlith | roh 2 | Wikimedia Commons | Public domain | [Howlite-BYU.jpg](https://commons.wikimedia.org/wiki/File:Howlite-BYU.jpg) |
+| howlith | schliff 2 | AlexeiAVA | CC BY 4.0 | [Howlite sphere.jpg](https://commons.wikimedia.org/wiki/File:Howlite_sphere.jpg) |
+| howlith | schliff 3 | Maatpublishing | CC BY-SA 4.0 | [WhiteHowlite.jpg](https://commons.wikimedia.org/wiki/File:WhiteHowlite.jpg) |

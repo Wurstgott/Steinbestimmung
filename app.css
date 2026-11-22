@@ -288,3 +288,7 @@ h1,h2,h3,p{margin:0}
 .result .rang{margin:0 auto}
 .result .tools{margin-top:30px}
 @media (prefers-reduced-motion:reduce){.kette i.neu,.plus,.opt.ok,.qhead .pop{animation:none!important}}
+
+.mehr{margin:14px 0 0;display:flex;gap:.9em;align-items:center;justify-content:center;min-height:2rem}
+.mehr .zahl{font-size:.8125rem;color:var(--staub)}
+.anders{padding:6px 14px!important;font-size:.68rem!important}

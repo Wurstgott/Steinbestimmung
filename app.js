@@ -2,11 +2,18 @@
   const S = window.STEINE, M = window.STIMMUNGEN, W = window.WISSEN || {}, C = window.CREDITS || {};
   const $ = (s, r = document) => r.querySelector(s);
   const el = (h) => { const t = document.createElement('template'); t.innerHTML = h.trim(); return t.content.firstChild; };
-  const img = (id, k) => `img/${id}_${{ r: 'roh', s: 'schliff', e: 'esel' }[k]}.jpg`;
+  const VA = window.VARIANTEN || {};
+  const img = (id, k, v = '') => `img/${id}_${{ r: 'roh', s: 'schliff', e: 'esel' }[k]}${v}.jpg`;
+  const klein = (id, k, v = '') => `img/t/${id}_${{ r: 'roh', s: 'schliff' }[k]}${v}.jpg`;
+  // alle Fotos eines Steins: '' ist das erste, '2', '3' sind weitere Ansichten
+  const vars = (id, k) => ['', ...(((VA[id] || {})[k]) || []).map((x) => x.v)];
+  const zufall = (a) => a[Math.floor(Math.random() * a.length)];
+  // bei jedem Öffnen der App liegt ein anderes Foto im Kasten
+  const wahl = {}; const pick = (id) => wahl[id] || (wahl[id] = { r: zufall(vars(id, 'r')), s: zufall(vars(id, 's')) });
   const lab = (s, k) => (s.l || ['Natur', 'Geschliffen'])[k === 'r' ? 0 : 1];
   const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-  const credit = (id, k, label) => {
-    const c = (C[id] || {})[k];
+  const credit = (id, k, label, v = '') => {
+    const c = v ? (((VA[id] || {})[k]) || []).find((x) => x.v === v) : (C[id] || {})[k];
     return c ? `${label}: <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.autor)}</a>, ${esc(c.lizenz)}` : '';
   };
 
@@ -22,7 +29,7 @@
   function renderGrid() {
     S.forEach((s, i) => {
       const t = el(`<button class="tile" style="--c:${s.c};--i:${i}" data-id="${s.id}">
-        <span class="ph"><span class="phi"><img class="r" src="img/t/${s.id}_roh.jpg" alt="" decoding="async"><img class="s" data-src="img/t/${s.id}_schliff.jpg" alt="" decoding="async"></span></span>
+        <span class="ph"><span class="phi"><img class="r" src="${klein(s.id, 'r', pick(s.id).r)}" alt="" decoding="async"><img class="s" data-src="${klein(s.id, 's', pick(s.id).s)}" alt="" decoding="async"></span></span>
         <b>${s.name.replace('Süsswasser', 'Süsswasser&shy;').replace('Berg', 'Berg&shy;').replace('Rosen', 'Rosen&shy;')}</b><span class="th">${s.thema}</span></button>`);
       t.onclick = () => { location.hash = s.id; };
       grid.append(t);
@@ -81,14 +88,15 @@
       <div class="cols">
         <div class="left">
           <div class="bezel"><div class="stage">
-            <img src="${img(s.id, 's')}" alt="${s.name}, ${lab(s, 's')}">
+            <img class="cutimg" src="${img(s.id, 's', pick(s.id).s)}" alt="${s.name}, ${lab(s, 's')}">
             <canvas aria-hidden="true"></canvas>
             <span class="tag"></span><span class="hint">Mit dem Finger blank reiben</span>
           </div></div>
           <div class="under">
             <div class="seg" role="group" aria-label="Ansicht"><button data-v="r" aria-pressed="true">${lab(s, 'r')}</button><button data-v="s" aria-pressed="false">${lab(s, 's')}</button></div>
           </div>
-          <p class="credit">${[credit(s.id, 'r', 'Foto ' + lab(s, 'r')), credit(s.id, 's', lab(s, 's'))].filter(Boolean).join('; ')}</p>
+          <p class="mehr"><button class="txtbtn anders">Anderes Foto</button> <span class="zahl"></span></p>
+          <p class="credit fotos"></p>
         </div>
         <div class="right">
           <p class="no">Stein ${i + 1} von ${S.length}</p>
@@ -126,7 +134,7 @@
       cells = new Set(); done = false; cv.classList.remove('gone');
     }
     function setState(k, fx) {
-      const cut = k === 's';
+      const cut = k === 's'; state = k; if (typeof info === 'function' && typeof cur !== 'undefined') info();
       tag.textContent = lab(s, k); dsw.classList.toggle('b', cut);
       dsw.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === k));
       if (cut) {
@@ -134,7 +142,20 @@
         if (fx) { stage.classList.remove('gleam'); void stage.offsetWidth; stage.classList.add('gleam'); }
       } else if (raw.complete && raw.naturalWidth) drawRaw();
     }
-    raw.onload = drawRaw; raw.src = img(s.id, 'r'); setState('r');
+    // mehrere Fotos je Ansicht: „Anderes Foto“ blättert durch Rohsteine bzw. Schliffe
+    const cur = { r: pick(s.id).r, s: pick(s.id).s }; let state = 'r';
+    const cutimg = $('.cutimg', v), anders = $('.anders', v), zahl = $('.zahl', v), fotos = $('.fotos', v);
+    const info = () => {
+      const list = vars(s.id, state);
+      anders.hidden = list.length < 2; zahl.textContent = list.length > 1 ? `${lab(s, state)} ${list.indexOf(cur[state]) + 1} von ${list.length}` : '';
+      fotos.innerHTML = [credit(s.id, 'r', 'Foto ' + lab(s, 'r'), cur.r), credit(s.id, 's', lab(s, 's'), cur.s)].filter(Boolean).join('; ');
+    };
+    anders.onclick = () => {
+      const list = vars(s.id, state); cur[state] = list[(list.indexOf(cur[state]) + 1) % list.length];
+      if (state === 'r') raw.src = img(s.id, 'r', cur.r); else { cutimg.src = img(s.id, 's', cur.s); stage.classList.remove('gleam'); void stage.offsetWidth; stage.classList.add('gleam'); }
+      info();
+    };
+    raw.onload = () => { if (state === 'r') drawRaw(); }; raw.src = img(s.id, 'r', cur.r); setState('r');
     function rub(e) {
       if (done) return;
       const r = cv.getBoundingClientRect(), k = cv.width / r.width;
@@ -243,12 +264,12 @@
       const kopf = `<div class="qhead"><span>${n + 1} von ${rounds.length}</span><span class="serie"${serie > 1 ? '' : ' hidden'}>Serie ${serie}</span><span class="sc">${pkt} Punkte</span></div>`;
       let frage, wahl, tipText;
       if (modus === 'foto') {
-        frage = `<div class="bezel"><div class="stage"><img src="${img(s.id, k)}" alt="Welcher Stein ist das?"><img class="tipp" src="${img(s.id, 'e')}" alt=""><span class="tag">${lab(s, k)}</span></div></div>`;
+        frage = `<div class="bezel"><div class="stage"><img src="${img(s.id, k, zufall(vars(s.id, k)))}" alt="Welcher Stein ist das?"><img class="tipp" src="${img(s.id, 'e')}" alt=""><span class="tag">${lab(s, k)}</span></div></div>`;
         wahl = `<div class="opts">${opts.map((o) => `<button class="opt" data-id="${o.id}">${o.name}</button>`).join('')}</div>`;
         tipText = ['Eselsbrücken-Bild zeigen', 'Stein wieder zeigen'];
       } else if (modus === 'wort') {
         frage = `<div class="frage"><small>Welcher Stein steht für</small><b>${s.thema}</b></div><div class="bezel mini tipp"><div class="stage"><img src="${img(s.id, 'e')}" alt=""></div></div>`;
-        wahl = `<div class="opts bilder">${opts.map((o) => `<button class="opt bild" data-id="${o.id}"><span class="ph"><span class="phi"><img src="img/t/${o.id}_schliff.jpg" alt=""></span></span><span>${o.name}</span></button>`).join('')}</div>`;
+        wahl = `<div class="opts bilder">${opts.map((o) => `<button class="opt bild" data-id="${o.id}"><span class="ph"><span class="phi"><img src="${klein(o.id, 's', zufall(vars(o.id, 's')))}" alt=""></span></span><span>${o.name}</span></button>`).join('')}</div>`;
         tipText = ['Eselsbrücken-Bild zeigen', 'Bild ausblenden'];
       } else {
         frage = `<div class="frage"><small>Wie heißt dieser Stein auf Deutsch?</small><b lang="en">${w.en}</b>${'speechSynthesis' in window ? '<button class="txtbtn hoer">Anhören</button>' : ''}</div><div class="bezel mini tipp"><div class="stage"><img src="img/t/${s.id}_schliff.jpg" alt=""></div></div>`;
@@ -301,7 +322,7 @@
 
   /* ---------- Bildnachweise ---------- */
   function openCredits() {
-    const li = S.map((s) => `<li><strong>${s.name}</strong>: ${[credit(s.id, 'r', lab(s, 'r')), credit(s.id, 's', lab(s, 's')), credit(s.id, 'e', 'Eselsbrücke')].filter(Boolean).join('; ')}</li>`).join('');
+    const li = S.map((s) => `<li><strong>${s.name}</strong>: ${[...vars(s.id, 'r').map((x) => credit(s.id, 'r', lab(s, 'r'), x)), ...vars(s.id, 's').map((x) => credit(s.id, 's', lab(s, 's'), x)), credit(s.id, 'e', 'Eselsbrücke')].filter(Boolean).join('; ')}</li>`).join('');
     const v = el(`<div class="sheet plain"><div class="in">
       <div class="bar"><button class="txtbtn back">Zurück</button></div>
       <div class="right"><h2>Bildnachweise</h2>
