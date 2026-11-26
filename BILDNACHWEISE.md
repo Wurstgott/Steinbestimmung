@@ -168,3 +168,20 @@ Alle Fotos stammen von Wikimedia Commons und wurden für die App quadratisch zug
 | howlith | roh 2 | Wikimedia Commons | Public domain | [Howlite-BYU.jpg](https://commons.wikimedia.org/wiki/File:Howlite-BYU.jpg) |
 | howlith | schliff 2 | AlexeiAVA | CC BY 4.0 | [Howlite sphere.jpg](https://commons.wikimedia.org/wiki/File:Howlite_sphere.jpg) |
 | howlith | schliff 3 | Maatpublishing | CC BY-SA 4.0 | [WhiteHowlite.jpg](https://commons.wikimedia.org/wiki/File:WhiteHowlite.jpg) |
+
+## Setzkasten
+
+| Stein | Urheber | Lizenz | Quelle |
+|---|---|---|---|
+| Citrin | Darla Sondrol | CC0 | [Citrine (GeoDIL number - 1785).jpg](https://commons.wikimedia.org/wiki/File:Citrine_(GeoDIL_number_-_1785).jpg) |
+| Pyrit | Vassil | Public domain | [Pyrite 60608.jpg](https://commons.wikimedia.org/wiki/File:Pyrite_60608.jpg) |
+| Achat | Ra'ike | CC BY-SA 3.0 | [Quartz - Agateplate, bluegrey.JPG](https://commons.wikimedia.org/wiki/File:Quartz_-_Agateplate,_bluegrey.JPG) |
+| Bernstein | James St. John | CC BY 2.0 | [Amber (resinite) (Baltics) 4.jpg](https://commons.wikimedia.org/wiki/File:Amber_(resinite)_(Baltics)_4.jpg) |
+| Malachit | W.carter | CC BY 4.0 | [Tumbled malachite gemstone 2.jpg](https://commons.wikimedia.org/wiki/File:Tumbled_malachite_gemstone_2.jpg) |
+| Türkis | Adrian Pingstone | Public domain | [Turquoise.pebble.700pix.jpg](https://commons.wikimedia.org/wiki/File:Turquoise.pebble.700pix.jpg) |
+| Obsidian | James St. John | CC BY 2.0 | [Obsidian & devitrified obsidian gravel (Obsidian Cliff, Yellowstone, Wyoming, USA) 4.jpg](https://commons.wikimedia.org/wiki/File:Obsidian_%26_devitrified_obsidian_gravel_(Obsidian_Cliff,_Yellowstone,_Wyoming,_USA)_4.jpg) |
+| Fluorit | Giovanni Dall'Orto | CC BY-SA 2.5 it | [9104 - Milano - Museo storia naturale - Fluorite - Foto Giovanni Dall'Orto 22-Apr-2007.jpg](https://commons.wikimedia.org/wiki/File:9104_-_Milano_-_Museo_storia_naturale_-_Fluorite_-_Foto_Giovanni_Dall%27Orto_22-Apr-2007.jpg) |
+| Rhodochrosit | Ra'ike | CC BY 3.0 | [Rhodochrosite - tumble polished stone.jpg](https://commons.wikimedia.org/wiki/File:Rhodochrosite_-_tumble_polished_stone.jpg) |
+| Saphir | W.carter | CC BY 4.0 | [Four man-made faceted blue sapphires 3.jpg](https://commons.wikimedia.org/wiki/File:Four_man-made_faceted_blue_sapphires_3.jpg) |
+| Smaragd | James St. John | CC BY 2.0 | [Emerald-calcite-pyrite on carbonaceous shale (Muzo Hydrothermal Emerald Deposit; Muzo area, Boyaca, Colombia) (32688929206).jpg](https://commons.wikimedia.org/wiki/File:Emerald-calcite-pyrite_on_carbonaceous_shale_(Muzo_Hydrothermal_Emerald_Deposit;_Muzo_area,_Boyaca,_Colombia)_(32688929206).jpg) |
+| Diamant | Petragems | CC BY-SA 4.0 | [Round Brilliant Cut Diamond.jpg](https://commons.wikimedia.org/wiki/File:Round_Brilliant_Cut_Diamond.jpg) |

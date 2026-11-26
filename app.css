@@ -292,3 +292,32 @@ h1,h2,h3,p{margin:0}
 .mehr{margin:14px 0 0;display:flex;gap:.9em;align-items:center;justify-content:center;min-height:2rem}
 .mehr .zahl{font-size:.8125rem;color:var(--staub)}
 .anders{padding:6px 14px!important;font-size:.68rem!important}
+
+/* ---------- Selber schreiben ---------- */
+.schreib{position:relative;display:flex;gap:10px;margin-top:26px}
+.schreib input{flex:1;min-width:0;font:inherit;font-size:1.125rem;text-align:center;color:var(--perle);background:#0000003d;border:0;border-radius:999px;padding:13px 18px;box-shadow:inset 0 0 0 1px var(--linie);outline:none}
+.schreib input::placeholder{color:var(--staub);opacity:.7}
+.schreib input:focus{box-shadow:inset 0 0 0 1.5px var(--gold)}
+.schreib input.ok{background:#3f9b6d;box-shadow:none;color:#fff}
+.schreib input.no{background:#b5483f;box-shadow:none;color:#fff;animation:shake .35s}
+.loesung{margin:0 auto 14px!important}
+.loesung small{display:block;font-size:.9rem;letter-spacing:.01em;text-transform:none;color:var(--staub);margin-bottom:.3em;text-wrap:balance}
+.loesung b{display:block;font-weight:300;font-size:2.2rem;line-height:1.1;letter-spacing:.04em;color:var(--gold)}
+
+/* ---------- Setzkasten ---------- */
+.kasten .in{max-width:34rem}
+.hub .zumkasten{margin-top:14px}
+.faecher{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:5px;margin:30px 0 34px;background:var(--tief);border-radius:10px;box-shadow:0 0 0 1px var(--linie),0 24px 40px -26px #000}
+.fach{display:block;text-align:center;padding:12px 8px 12px;border-radius:6px;background:#ffffff0a;transition:background .2s}
+.fach .ph{width:min(100%,104px);margin:0 auto 9px}
+.fach b{display:block;font-weight:400;font-size:1rem;line-height:1.2;overflow-wrap:anywhere}
+.fach small{display:block;font-size:.7rem;line-height:1.35;color:var(--staub);margin-top:3px;text-wrap:balance}
+.fach.zu .phi img,.fach.frei .phi img{filter:grayscale(1) brightness(.5) blur(5px)}
+.fach.zu{opacity:.7}
+.fach.frei{background:color-mix(in srgb,var(--gold) 16%,transparent)}
+.fach.frei small{color:var(--gold)}
+.fach.hat:hover{background:#ffffff14}
+.fach.neu .ph{animation:perle .8s var(--feder)}
+.fach.wackel{animation:shake .35s}
+.bonus .stage{touch-action:auto}
+@media (min-width:560px){.faecher{grid-template-columns:repeat(4,1fr)}}

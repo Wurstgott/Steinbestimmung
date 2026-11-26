@@ -8,7 +8,8 @@ Eine kleine, verspielte Web-App zu 25 Edel- und Schmucksteinen: jeder Stein als 
 - **Eselsbrücke:** Zu jedem Stein eine Rätselkarte zum Umdrehen, die sich mit einem Foto auflöst.
 - **Woher der Name kommt** und **Sage und Geschichte** zu jedem Stein, auf Wunsch vorgelesen.
 - **Zieh einen Stein**, Filter nach Stimmung und Merkliste (bleibt nur im eigenen Browser gespeichert).
-- **Spielen:** drei Spielarten – Stein am Foto erkennen, Stein zum Leitwort finden, englische Namen lernen. Mit Punkten, Serien, Stufen und einer Perlenkette als Fortschritt (bleibt nur im eigenen Browser gespeichert).
+- **Spielen:** vier Spielarten – Stein am Foto erkennen, Stein zum Leitwort finden, englische Namen lernen und den Namen selber schreiben (Tippfehler und Groß-/Kleinschreibung werden verziehen, die richtige Schreibweise wird danach gezeigt).
+- **Juwelen und Setzkasten:** Beim Spielen sammelt man Juwelen und kauft davon zwölf weitere Steine, jeder mit einer neuen Info. Der Stand bleibt nur im eigenen Browser gespeichert.
 
 Reines HTML, CSS und JavaScript ohne Build-Schritt. Läuft über GitHub Pages (Branch `main`, Ordner `/`).
 
