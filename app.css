@@ -375,118 +375,94 @@ h1,h2,h3,p{margin:0}
 .leiste{padding:12px 12px 13px}
 
 /* =====================================================================
-   Grand-Hotel-Look: Puderrosa, Senf, Petrol, Tinte. Titeltafeln wie im
-   Film, Konturen und harte Schatten wie im Comic.
+   Vitrine: dunkler Edelstein-Grund, Licht von oben, alles hinter Glas.
+   Glasflächen = heller Kantenstrich oben, zarter Verlauf, Spiegelung.
    ===================================================================== */
 :root{
-  --stein:#f1cdc3; --tief:#2b2233; --perle:#2b2233; --tinte:#2b2233; --staub:#6f5a68; --gold:#b23a2e;
-  --creme:#fbf1e2; --senf:#e9b44c; --petrol:#1f7a80; --linie:#2b2233;
-  --ader:18px;
-  --marmor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18'%3E%3Ccircle cx='4' cy='4' r='1.3' fill='%232b2233' fill-opacity='.09'/%3E%3Ccircle cx='13' cy='13' r='1.3' fill='%232b2233' fill-opacity='.09'/%3E%3C/svg%3E");
-  --hart:4px 4px 0 var(--tinte);
+  --glas:linear-gradient(160deg,#ffffff24 0%,#ffffff0d 34%,#ffffff05 62%,#ffffff12 100%);
+  --kante:inset 0 1px 0 #ffffff70,inset 0 0 0 1px #ffffff26,inset 0 -1px 0 #00000066;
+  --tiefe:0 26px 44px -26px #000,0 2px 0 #0006;
+  --spiegel:linear-gradient(112deg,#ffffff00 28%,#ffffff24 36%,#ffffff08 41%,#ffffff00 47%,#ffffff00 58%,#ffffff12 62%,#ffffff00 66%);
 }
-html{background:var(--stein)}
-body{background:var(--marmor) 50% 0/var(--ader),var(--stein);font-weight:400}
-:focus-visible{outline:3px solid var(--petrol)}
+body{background:
+  var(--marmor) 50% 0/var(--ader),
+  radial-gradient(46rem 30rem at 50% -6%,#4b6660 0,#24322f 38%,transparent 72%) no-repeat,
+  linear-gradient(#18201e,#0f1514)}
+html{background:#0f1514}
 
-/* Titeltafel */
-.hero{max-width:34rem;margin:0 auto;padding:30px 18px 28px;background:var(--creme);border:2.5px solid var(--tinte);border-radius:6px;box-shadow:inset 0 0 0 5px var(--creme),inset 0 0 0 6.5px var(--tinte),6px 6px 0 var(--tinte);position:relative}
-.hero::before,.hero::after{content:"✦";position:absolute;top:14px;font-size:.8rem;color:var(--gold)}
-.hero::before{left:18px}.hero::after{right:18px}
-.logo{width:60px;height:60px;border-radius:50%;margin-bottom:18px;box-shadow:0 0 0 2.5px var(--tinte),3px 3px 0 2.5px var(--tinte)}
-.hero h1{font-weight:700;text-transform:uppercase;letter-spacing:.13em;padding-left:.13em;font-size:clamp(1.25rem,6.1vw,2.3rem);line-height:1.2;white-space:nowrap}
-.hero h1::after{content:"";display:block;width:64px;height:8px;margin:14px auto 0;background:linear-gradient(var(--tinte),var(--tinte)) 0 0/100% 2.5px no-repeat,linear-gradient(var(--tinte),var(--tinte)) 0 100%/100% 1px no-repeat}
-.motto{color:var(--gold);font-weight:600;margin-top:14px}
-.intro p:not(.motto){color:var(--tinte);opacity:.82;margin-top:1em}
-.perlen i{box-shadow:0 0 0 1.5px var(--tinte)}
-.perlen{gap:12px}
+/* Schaukasten für den Kopf */
+.hero{max-width:36rem;margin:0 auto;padding:34px 20px 32px;border-radius:22px;position:relative;overflow:hidden;background:var(--glas);box-shadow:var(--kante),var(--tiefe);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hero::after,.leiste::after,.modus::after,.kasten .faecher::after,.sheet .left::after{content:"";position:absolute;inset:0;background:var(--spiegel);pointer-events:none;border-radius:inherit}
+.hero h1{font-size:clamp(1.9rem,10vw,4rem)}
+.logo{box-shadow:0 0 0 1px #ffffff40,0 14px 26px -12px #000}
 
-/* Knöpfe: flach, konturiert, mit hartem Schatten */
-.btn,.btn.line,.txtbtn,.seg,.opt,.modus,.schreib input,.leiste,.toast{box-shadow:inset 0 0 0 2px var(--tinte),var(--hart)}
-.btn{background:var(--senf);color:var(--tinte);font-weight:600}
-.btn:hover{background:#f3c668}
-.btn.line{background:var(--creme);color:var(--tinte)}
-.btn.line:hover{background:#fff;box-shadow:inset 0 0 0 2px var(--tinte),var(--hart)}
-.btn:active,.txtbtn:active,.opt:active,.modus:active{transform:translate(3px,3px);box-shadow:inset 0 0 0 2px var(--tinte),1px 1px 0 var(--tinte)}
-.txtbtn{background:var(--creme);font-weight:600;box-shadow:inset 0 0 0 2px var(--tinte),3px 3px 0 var(--tinte)}
-.txtbtn[aria-pressed=true]{background:var(--senf);color:var(--tinte);box-shadow:inset 0 0 0 2px var(--tinte),3px 3px 0 var(--tinte)}
-.seg{background:var(--creme)}
-.seg button{color:var(--staub);font-weight:600}
-.seg::before{background:var(--senf);box-shadow:inset 0 0 0 2px var(--tinte)}
-.filter span{color:var(--tinte);font-weight:600}
-.filter button{font-weight:500}
-.filter button[aria-pressed=true]{border-bottom-width:2.5px}
+/* Knöpfe und Schalter aus Glas */
+.btn,.btn.line,.txtbtn,.seg,.opt,.schreib input{background:var(--glas);color:var(--perle);box-shadow:var(--kante),0 12px 22px -14px #000;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.btn{background:linear-gradient(160deg,#f7e7bd 0%,#d6b872 46%,#b8964e 100%);color:#221b0c;box-shadow:inset 0 1px 0 #fff9,inset 0 -1px 0 #0005,0 12px 22px -12px #000}
+.btn:hover{background:linear-gradient(160deg,#fff3d2 0%,#e2c684 46%,#c4a25a 100%)}
+.btn.line:hover,.txtbtn:hover,.opt:hover{background:linear-gradient(160deg,#ffffff38 0%,#ffffff14 40%,#ffffff0a 100%);box-shadow:var(--kante),0 12px 22px -14px #000}
+.txtbtn[aria-pressed=true]{background:linear-gradient(160deg,#f7e7bd,#d6b872 46%,#b8964e);color:#221b0c;box-shadow:inset 0 1px 0 #fff9,0 10px 18px -12px #000}
+.seg::before{box-shadow:inset 0 1px 0 #fff,0 3px 8px #0009}
 
-/* Steine: Tuschekontur */
-.ph{background:var(--tinte)}
-.phi{inset:3px}
-.tile b{font-weight:500}
-.th{color:var(--staub);font-weight:600}
-.tile.pick .ph{background:var(--gold)}
-.tile.fav::after{box-shadow:0 0 0 2px var(--tinte)}
+/* Jeder Stein in seinem eigenen Glaswürfel auf einem Glasboden */
+.tray{gap:26px var(--g)}
+.tile{padding:14px 12px 16px;border-radius:16px;background:var(--glas);box-shadow:var(--kante),var(--tiefe);overflow:hidden}
+.tile::before{content:"";position:absolute;inset:0;background:var(--spiegel);pointer-events:none;z-index:3;transition:transform .7s ease-out}
+.tile:hover::before,.tile:focus-visible::before{transform:translateX(18%)}
+.tile b{margin-top:14px}
+.tile.pick{background:linear-gradient(160deg,#f7e7bd55,#d6b87230 50%,#ffffff10);box-shadow:inset 0 1px 0 #fff9,inset 0 0 0 1px var(--gold),var(--tiefe)}
+.tile.fav::after{top:10px;right:10px;z-index:4}
+.ph{filter:none}
+/* Spot auf den Stein */
+.phi::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(90% 60% at 50% -10%,#ffffff40,#ffffff00 70%)}
 
-/* Stein-Seite: Pastell in der Farbe des Steins */
-.sheet{background:var(--marmor) 50% 0/var(--ader) local,color-mix(in srgb,var(--c) 30%,var(--creme))}
-.quiz,.plain{background:var(--marmor) 50% 0/var(--ader) local,var(--stein)}
-.bezel{background:var(--tinte);padding:4px}
-.sheet h2,.right h2,.hub h2,.frage b{font-weight:600;letter-spacing:.02em}
-.wort{color:var(--gold);font-weight:400}
-.thema{font-weight:600}
-.thema::before,.thema::after{height:2px;opacity:1;background:var(--tinte)}
-.sheet h3{color:var(--tinte);font-weight:700;display:inline-block;padding:5px 14px 4px;padding-left:calc(14px + .2em);background:var(--senf);box-shadow:inset 0 0 0 2px var(--tinte),3px 3px 0 var(--tinte);border-radius:2px;transform:rotate(-1.2deg)}
-.sheet section p{color:var(--tinte)}
-.credit,.sheet section .credit{color:var(--staub);opacity:1}
-.engl strong{color:var(--tinte);font-weight:600}
-.face{border-radius:8px;box-shadow:inset 0 0 0 2.5px var(--tinte),5px 5px 0 var(--tinte)}
-.f-back{box-shadow:inset 0 0 0 2.5px var(--tinte),-5px 5px 0 var(--tinte)}
-.f-front{color:var(--creme);background:
-  repeating-conic-gradient(from 0deg at 50% 118%,#ffffff1f 0 6deg,#ffffff00 6deg 12deg),
-  color-mix(in srgb,var(--c) 78%,var(--tinte))}
-.f-front .q{text-shadow:2px 2px 0 var(--tinte);font-weight:600}
-.nav small{color:var(--staub)}
+/* Stein-Seite: Vitrine, von oben beleuchtet in der Farbe des Steins */
+.sheet{background:
+  var(--marmor) 50% 0/var(--ader) local,
+  radial-gradient(44rem 30rem at 50% -4%,color-mix(in srgb,var(--c) 62%,#3a4a46) 0,color-mix(in srgb,var(--c) 22%,#18201e) 46%,transparent 78%) local no-repeat,
+  linear-gradient(#18201e,#0f1514)}
+.quiz,.plain{background:var(--marmor) 50% 0/var(--ader) local,radial-gradient(44rem 28rem at 50% -6%,#42594f 0,#222f2c 40%,transparent 74%) local no-repeat,linear-gradient(#18201e,#0f1514)}
+.sheet .left{position:relative;padding:14px 14px 16px;border-radius:22px;background:var(--glas);box-shadow:var(--kante),var(--tiefe)}
+.sheet .left > *{position:relative;z-index:1}
+.sheet .left::after{z-index:0}
+.bezel{filter:drop-shadow(0 18px 18px #000a)}
+.sheet section{margin-top:26px;padding:26px 20px 26px;border-radius:18px;background:var(--glas);box-shadow:var(--kante),var(--tiefe)}
+.sheet section::before{display:none}
+.sheet h3{margin-bottom:14px}
+.face{border-radius:12px;box-shadow:var(--kante),0 16px 28px -18px #000}
+.f-front{background:
+  var(--spiegel),
+  linear-gradient(160deg,#ffffff30 0%,#ffffff08 38%,#00000030 100%),
+  color-mix(in srgb,var(--c) 62%,#1a2220)}
+.nav{margin-top:30px}
 
 /* Spielen */
-.modus{background:var(--creme);border-radius:10px}
-.modus:hover{background:#fff;box-shadow:inset 0 0 0 2px var(--tinte),var(--hart)}
-.modus b{color:var(--tinte);font-weight:600}
-.modus small{color:var(--gold);font-weight:600}
-.opt{background:var(--creme);font-weight:500}
-.opt:hover{box-shadow:inset 0 0 0 2px var(--tinte),var(--hart)}
-.opt.ok,.opt.no{box-shadow:inset 0 0 0 2px var(--tinte),var(--hart)}
-.opt.bild,.opt.bild:hover{box-shadow:none}
-.schreib input{background:var(--creme);color:var(--tinte)}
-.schreib input:focus{box-shadow:inset 0 0 0 2.5px var(--petrol),var(--hart)}
-.schreib input.ok,.schreib input.no{box-shadow:inset 0 0 0 2px var(--tinte),var(--hart)}
-.qhead{font-weight:600}
-.qhead .sc,.rang strong,.loesung b,.result .big{color:var(--gold)}
-.result .big{font-weight:700}
-.loesung b{font-weight:600}
-.plus{color:var(--gold);text-shadow:none;font-weight:700}
-.kette i{box-shadow:inset 0 0 0 1.5px var(--tinte)}
-.kette i.l1,.kette i.l2,.kette i.l3{box-shadow:0 0 0 1.5px var(--tinte)}
-.kette i.l4{box-shadow:0 0 0 1.5px var(--tinte),0 0 0 4px var(--senf),0 0 0 5.5px var(--tinte)}
+.modus{position:relative;overflow:hidden;background:var(--glas);box-shadow:var(--kante),var(--tiefe)}
+.modus:hover{background:linear-gradient(160deg,#ffffff30,#ffffff10 40%,#ffffff08);box-shadow:var(--kante),var(--tiefe)}
+.opt.ok{background:linear-gradient(160deg,#6fd3a0,#3f9b6d 55%,#2c7a53);color:#fff;box-shadow:inset 0 1px 0 #fff8,0 12px 22px -14px #000}
+.opt.no{background:linear-gradient(160deg,#e68a80,#b5483f 55%,#8f352e);color:#fff;box-shadow:inset 0 1px 0 #fff8,0 12px 22px -14px #000}
+.opt.bild,.opt.bild:hover{background:none!important;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.schreib input{color:var(--perle)}
+.schreib input:focus{box-shadow:inset 0 1px 0 #ffffff70,inset 0 0 0 1.5px var(--gold),0 12px 22px -14px #000}
+.schreib input.ok{background:linear-gradient(160deg,#6fd3a0,#3f9b6d 55%,#2c7a53)}
+.schreib input.no{background:linear-gradient(160deg,#e68a80,#b5483f 55%,#8f352e)}
+.kette i{box-shadow:inset 0 1px 0 #ffffff50,inset 0 0 0 1px #ffffff26;background:#ffffff0d}
 
-/* Setzkasten und Belohnungen */
-.leiste{background:var(--creme);border-radius:12px}
-.vitrine:hover .leiste,.result .leiste:hover,.leiste.voll{box-shadow:inset 0 0 0 2px var(--tinte),var(--hart)}
-.leiste.bereit{background:#fde9b8;animation:hupf 1.8s ease-in-out infinite;box-shadow:inset 0 0 0 2px var(--tinte),var(--hart)}
-@keyframes hupf{50%{transform:translateY(-3px)}}
-.lt b{color:var(--gold);font-weight:600}
-.balken,.wege i{background:#2b223326;height:5px}
-.balken i,.wege u{background:var(--petrol)}
-.holz{box-shadow:inset 0 1px 0 #ffffff30,inset 0 -2px 0 #00000055,0 0 0 2.5px var(--tinte),5px 5px 0 2.5px var(--tinte)!important}
-.faecher.holz.voll{box-shadow:0 0 0 2.5px var(--tinte),0 0 0 8px var(--senf),0 0 0 10.5px var(--tinte)!important}
-.holz .fach b{color:var(--creme)}
-.holz .fach small{color:#d8c7b6}
-.holz .fach.frei small{color:var(--senf)}
-.fach.zu b,.fach.frei b{color:var(--creme)}
-.wege h3{color:var(--tinte);background:none;box-shadow:none;transform:none;display:block;padding:0}
-.wege p{border-top:1.5px solid #2b223330}
-.wege b{color:var(--gold);font-weight:500}
-.toast{background:var(--tinte);color:var(--creme);box-shadow:inset 0 0 0 2px var(--senf),4px 4px 0 #00000040;backdrop-filter:none}
-.toast b{color:var(--senf)}
-.foot .von{font-weight:600;letter-spacing:.04em}
-.foot em,.foot .mit{color:var(--staub)}
-.sheet .wort{color:var(--tinte);opacity:.85}
-.holz .ph{background:var(--senf)}
-.holz .phi{inset:2px}
+/* Setzkasten als Glasvitrine mit Messingrahmen und Glasböden */
+.leiste{position:relative;overflow:hidden;background:var(--glas);box-shadow:var(--kante),var(--tiefe);border-radius:18px}
+.leiste > *{position:relative;z-index:1}
+.vitrine:hover .leiste,.result .leiste:hover{box-shadow:var(--kante),inset 0 0 0 1px var(--gold),var(--tiefe)}
+.leiste.bereit{box-shadow:var(--kante),inset 0 0 0 1px var(--gold),var(--tiefe)}
+.holz{background:linear-gradient(180deg,#2a3936,#131a18)!important;box-shadow:inset 0 0 0 1px #00000080,0 0 0 2px #b8964e,0 0 0 3px #f1dfae66,0 24px 40px -22px #000!important}
+.faecher.holz{position:relative;padding:8px;gap:6px;border-radius:10px}
+.kasten .faecher::after{z-index:2}
+.faecher.holz.voll{box-shadow:inset 0 0 0 1px #00000080,0 0 0 3px #e9cf8c,0 0 0 4px #fff3,0 0 44px -4px #e9cf8c,0 24px 40px -22px #000!important}
+.holz .fach{border-radius:5px;background:linear-gradient(180deg,#ffffff14,#ffffff05 55%,#ffffff10);box-shadow:inset 0 1px 0 #ffffff45,inset 0 -3px 0 -1px #ffffff55,inset 0 -9px 12px -8px #ffffff30,inset 0 0 0 1px #ffffff1a}
+.holz .fach.frei{background:linear-gradient(180deg,#f1dfae30,#d6b87212 55%,#f1dfae24)}
+.holz .fach.hat:hover{background:linear-gradient(180deg,#ffffff24,#ffffff0a 55%,#ffffff18)}
+.slots.holz{border-radius:9px}
+.slots.holz i{border-radius:3px;background:linear-gradient(180deg,#ffffff14,#ffffff05 55%,#ffffff10);box-shadow:inset 0 1px 0 #ffffff40,inset 0 -2px 0 -1px #ffffff55,inset 0 0 0 1px #ffffff1a}
+.slots.holz i.da{box-shadow:inset 0 1px 0 #ffffff40,inset 0 -2px 0 -1px #ffffff55,inset 0 0 0 1px #d6b87280}
+.wege{padding:24px 20px 10px;border-radius:18px;background:var(--glas);box-shadow:var(--kante),var(--tiefe);max-width:none}
+.toast{background:linear-gradient(160deg,#ffffff30,#ffffff10 40%,#ffffff08),#101715d9;box-shadow:var(--kante),inset 0 0 0 1px var(--gold),0 14px 26px -12px #000;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+@media (prefers-reduced-motion:reduce){.tile::before{transition:none}}
