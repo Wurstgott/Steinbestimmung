@@ -70,7 +70,7 @@
       last = pool[Math.floor(Math.random() * pool.length)];
       last.classList.add('pick');
       if (++n < 10) setTimeout(tick, 80 + n * 30);
-      else { last.scrollIntoView({ block: 'center', behavior: 'smooth' }); setTimeout(() => { last.classList.remove('pick'); location.hash = last.dataset.id; }, 700); }
+      else { last.scrollIntoView({ block: 'center', behavior: 'smooth' }); setTimeout(() => { last.classList.remove('pick'); location.hash = last.dataset.id; if (spiel.zug !== heute()) { spiel.zug = heute(); gib(5, 'Tagesstein gezogen'); } }, 700); }
     };
     tick();
   };
@@ -166,7 +166,7 @@
       ctx.beginPath(); ctx.arc(x, y, rad, 0, 7); ctx.fill();
       cells.add(Math.floor((x / cv.width) * N) + N * Math.floor((y / cv.height) * N));
       hint.hidden = true;
-      if (cells.size > N * N * 0.55) setState('s', true);
+      if (cells.size > N * N * 0.55) { setState('s', true); einmal('reib', s.id); }
     }
     let down = false;
     cv.onpointerdown = (e) => { down = true; try { cv.setPointerCapture(e.pointerId); } catch (x) {} rub(e); };
@@ -176,7 +176,7 @@
 
     // Eselsbrücke umdrehen
     const flip = $('.flip', v), aufl = $('.aufl', v);
-    flip.onclick = () => { const on = flip.getAttribute('aria-pressed') !== 'true'; flip.setAttribute('aria-pressed', on); aufl.classList.toggle('on', on); };
+    flip.onclick = () => { const on = flip.getAttribute('aria-pressed') !== 'true'; flip.setAttribute('aria-pressed', on); aufl.classList.toggle('on', on); if (on) einmal('esel', s.id); };
 
     const heart = $('.heart', v);
     const paint = () => { const on = favs.has(s.id); heart.textContent = on ? 'Lieblingsstein' : 'Zu den Lieblingen'; heart.setAttribute('aria-pressed', on); };
@@ -193,6 +193,7 @@
     };
 
     const hoer = $('.hoer', v); if (hoer) hoer.onclick = () => speak(w.en, 'en-GB');
+    setTimeout(() => { if (shown === s.id) einmal('seh', s.id); }, 1200);
     $('.back', v).onclick = close;
     $('.p', v).onclick = () => { location.hash = prev.id; };
     $('.n', v).onclick = () => { location.hash = next.id; };
@@ -208,10 +209,31 @@
     schreib: { t: 'Selber schreiben', d: 'Du siehst ein Foto und tippst den Namen. Kleine Tippfehler sind erlaubt.' }
   };
   const STUFEN = [[0, 'Kiesel'], [150, 'Kristall'], [400, 'Edelstein'], [800, 'Juwel'], [1500, 'Kronjuwel']];
-  let spiel = { punkte: 0, best: {}, gem: {}, juwelen: null, kasten: [] };
+  let spiel = { punkte: 0, best: {}, gem: {}, juwelen: null, kasten: [], einmal: {}, tag: '', tage: 0, zug: '' };
   try { spiel = Object.assign(spiel, JSON.parse(localStorage.getItem('steine-spiel') || '{}')); } catch (e) {}
   if (spiel.juwelen == null) spiel.juwelen = spiel.punkte; // Juwelen zum Ausgeben; punkte zählt alles je Gesammelte für die Stufe
   const saveSpiel = () => { try { localStorage.setItem('steine-spiel', JSON.stringify(spiel)); } catch (e) {} };
+  // Belohnungen: Juwelen gibt es für fast alles, jeweils beim ersten Mal
+  const LOHN = { seh: [2, 'Stein entdeckt'], reib: [3, 'Blank gerieben'], esel: [2, 'Eselsbrücke gelöst'] };
+  const heute = () => { const d = new Date(); return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; };
+  function toast(html, ziel) {
+    let box = $('#toasts'); if (!box) { box = el('<div id="toasts" aria-live="polite"></div>'); document.body.append(box); }
+    const t = el(`<button class="toast">${html}</button>`); box.append(t);
+    t.onclick = () => { if (ziel) location.hash = ziel; t.remove(); };
+    setTimeout(() => t.classList.add('weg'), 2600); setTimeout(() => t.remove(), 3100);
+  }
+  function gib(n, text) {
+    const b = window.BONUS || [], offen = b.filter((x) => !spiel.kasten.includes(x.id)).sort((x, y) => x.preis - y.preis)[0];
+    const vorher = offen && spiel.juwelen >= offen.preis;
+    spiel.juwelen += n; spiel.punkte += n; saveSpiel(); if (typeof paintJuwelen === 'function') paintJuwelen();
+    if (text) toast(`<b>+${n}</b> ${text}`);
+    if (offen && !vorher && spiel.juwelen >= offen.preis) setTimeout(() => toast('Ein neuer Stein für deinen Setzkasten ist in Reichweite', 'kasten'), 700);
+  }
+  function einmal(art, id) {
+    const e = spiel.einmal[art] = spiel.einmal[art] || {}; if (e[id]) return;
+    e[id] = 1; gib(LOHN[art][0], LOHN[art][1]);
+  }
+  const anzahl = (art) => Object.keys(spiel.einmal[art] || {}).length;
   const stufe = (p) => { let i = 0; STUFEN.forEach((s, n) => { if (p >= s[0]) i = n; }); return { name: STUFEN[i][1], next: STUFEN[i + 1] || null }; };
   const gemCount = (id) => Object.keys(spiel.gem[id] || {}).length;
   const kette = (neu = []) => `<div class="kette" role="img" aria-label="${S.filter((s) => gemCount(s.id)).length} von ${S.length} Perlen gesammelt">${S.map((s) =>
@@ -327,15 +349,23 @@
     }
     function finish() {
       const vorher = stufe(spiel.punkte).name;
-      spiel.punkte += pkt; spiel.juwelen += pkt; paintJuwelen(); spiel.best[modus] = Math.max(spiel.best[modus] || 0, score); saveSpiel();
+      const boni = [];
+      if (neu.length) boni.push([neu.length * 5, neu.length === 1 ? 'eine neue Perle' : neu.length + ' neue Perlen']);
+      if (score === rounds.length) boni.push([20, 'fehlerfreie Runde']);
+      spiel.best[modus] = Math.max(spiel.best[modus] || 0, score);
+      gib(pkt + boni.reduce((a, x) => a + x[0], 0));
       const st = stufe(spiel.punkte), auf = st.name !== vorher;
+      if (auf) { boni.push([25, 'neue Stufe ' + st.name]); gib(25); }
+      const summe = pkt + boni.reduce((a, x) => a + x[0], 0);
       const t = score === rounds.length ? 'Alle richtig. Wunderschön.' : score >= 5 ? 'Schön, du hast ein gutes Auge.' : 'Das wird. Die Eselsbrücken helfen beim nächsten Mal.';
       body.innerHTML = `<div class="result"><div class="big">${score} von ${rounds.length}</div><h3>${t}</h3>
-        <p class="rang">+${pkt} Juwelen · jetzt ${spiel.juwelen} · <strong>${st.name}</strong>${auf ? ' – neue Stufe!' : ''}</p>
+        <p class="rang"><strong>+${summe} Juwelen</strong> · jetzt ${spiel.juwelen} · ${st.name}</p>
+        ${boni.length ? `<p class="klein">${pkt} für richtige Antworten${boni.map((x) => `, +${x[0]} für ${x[1]}`).join('')}.</p>` : ''}
         ${kette(neu)}
         <p class="klein">${neu.length ? (neu.length === 1 ? 'Eine neue Perle' : neu.length + ' neue Perlen') + ' an deiner Kette.' : 'Keine neue Perle diesmal – die Kette wartet.'}</p>
+        ${vitrineLeiste()}
         <div class="tools"><button class="btn again">Noch eine Runde</button><button class="btn line home">Andere Spielart</button><button class="btn line shop">Zum Setzkasten</button></div></div>`;
-      $('.again', body).onclick = () => openQuiz(modus); $('.home', body).onclick = () => { location.hash = 'quiz'; }; $('.shop', body).onclick = () => { location.hash = 'kasten'; };
+      $('.again', body).onclick = () => openQuiz(modus); $('.home', body).onclick = () => { location.hash = 'quiz'; }; $('.shop', body).onclick = () => { location.hash = 'kasten'; }; $('.leiste', body).onclick = () => { location.hash = 'kasten'; };
       if (score >= 5) setTimeout(() => funken($('.big', body), '#d6b56d'), 250);
     }
     round();
@@ -371,21 +401,41 @@
 
   /* ---------- Setzkasten: neue Steine für Juwelen ---------- */
   const B = window.BONUS || [];
+  const naechster = () => B.filter((b) => !spiel.kasten.includes(b.id)).sort((x, y) => x.preis - y.preis)[0];
+  // kleine Vorschau der Setzkasten mit Fortschritt zum nächsten Stein
+  function vitrineLeiste() {
+    const nx = naechster(), voll = spiel.kasten.length;
+    const text = !nx ? 'Dein Setzkasten ist vollständig' : spiel.juwelen >= nx.preis ? 'Du kannst dir einen neuen Stein holen' : `Noch ${nx.preis - spiel.juwelen} Juwelen bis zum nächsten Stein`;
+    return `<div class="leiste${nx && spiel.juwelen >= nx.preis ? ' bereit' : ''}${!nx ? ' voll' : ''}">
+      <span class="holz slots">${B.map((b) => spiel.kasten.includes(b.id) ? `<i class="da"><img src="img/t/b_${b.id}.jpg" alt=""></i>` : '<i></i>').join('')}</span>
+      <span class="lt"><b>${voll} von ${B.length}</b> ${text}</span>
+      ${nx ? `<span class="balken"><i style="width:${Math.min(100, Math.round(spiel.juwelen / nx.preis * 100))}%"></i></span>` : ''}</div>`;
+  }
   function openKasten() {
-    const voll = B.filter((b) => spiel.kasten.includes(b.id)).length;
+    const voll = spiel.kasten.length, nx = naechster(), perlen = S.filter((s) => gemCount(s.id)).length;
+    const wege = [
+      ['Steine entdecken', '2 je Stein', anzahl('seh')], ['Steine blank reiben', '3 je Stein', anzahl('reib')],
+      ['Eselsbrücken aufdecken', '2 je Stein', anzahl('esel')], ['Perlen für die Kette', '5 je Perle', perlen]];
     const v = el(`<div class="sheet quiz kasten"><div class="in">
       <div class="bar"><button class="txtbtn back">Zurück</button><span class="mt">${spiel.juwelen} Juwelen</span></div>
       <div class="hub">
         <h2>Mein Setzkasten</h2>
         <p class="rang"><strong>${spiel.juwelen} Juwelen</strong> · ${voll} von ${B.length} Fächern gefüllt</p>
-        <p class="klein">Juwelen sammelst du beim Spielen. Dafür kaufst du neue Steine für deinen Kasten – jeder bringt eine ganz neue Info mit.</p>
-        <div class="faecher">${B.map((b) => {
+        <p class="klein">${nx ? (voll ? `Noch ${B.length - voll} leere Fächer.` : 'Zwölf leere Fächer warten.') + ' Jeder neue Stein bringt eine ganz neue Info mit – und wer alle zwölf hat, bekommt den goldenen Rahmen.' : 'Alle zwölf Fächer sind gefüllt. Der goldene Rahmen gehört dir.'}</p>
+        <div class="holz faecher${nx ? '' : ' voll'}">${B.map((b) => {
           const hat = spiel.kasten.includes(b.id), fehlt = b.preis - spiel.juwelen;
           return `<button class="fach${hat ? ' hat' : fehlt > 0 ? ' zu' : ' frei'}" data-id="${b.id}" style="--c:${b.c}">
             <span class="ph"><span class="phi"><img src="img/t/b_${b.id}.jpg" alt=""></span></span>
-            <b>${hat ? b.name : '?'}</b><small>${hat ? 'In deinem Kasten' : fehlt > 0 ? `${b.preis} Juwelen · noch ${fehlt}` : `Kaufen für ${b.preis}`}</small></button>`;
+            <b>${hat ? b.name : b.r}</b><small>${hat ? 'In deinem Setzkasten' : fehlt > 0 ? `${b.preis} Juwelen · noch ${fehlt}` : `Holen für ${b.preis}`}</small></button>`;
         }).join('')}</div>
         <div class="tools"><button class="btn spielen">Juwelen sammeln</button></div>
+        <div class="wege"><h3>So sammelst du Juwelen</h3>
+          ${wege.map((w) => `<p><span>${w[0]} <small>${w[1]}</small></span><b>${w[2]} von ${S.length}</b><i><u style="width:${w[2] / S.length * 100}%"></u></i></p>`).join('')}
+          <p><span>Jeden Tag vorbeischauen <small>10 und mehr</small></span><b>${spiel.tage > 1 ? spiel.tage + ' Tage in Folge' : 'heute abgeholt'}</b></p>
+          <p><span>Tagesstein ziehen <small>5 am Tag</small></span><b>${spiel.zug === heute() ? 'heute abgeholt' : 'wartet auf dich'}</b></p>
+          <p><span>Spielen <small>10 bis 15 je richtige Antwort</small></span><b>+20 fehlerfrei</b></p>
+          <p><span>Neue Stufe erreichen <small>Kiesel bis Kronjuwel</small></span><b>+25</b></p>
+        </div>
       </div></div></div>`);
     overlay.replaceChildren(v); document.body.style.overflow = 'hidden';
     $('.back', v).onclick = close; $('.spielen', v).onclick = () => { location.hash = 'quiz'; };
@@ -394,7 +444,7 @@
       if (spiel.kasten.includes(b.id)) { location.hash = 'kasten-' + b.id; return; }
       if (spiel.juwelen < b.preis) { f.classList.remove('wackel'); void f.offsetWidth; f.classList.add('wackel'); return; }
       spiel.juwelen -= b.preis; spiel.kasten.push(b.id); saveSpiel(); paintJuwelen();
-      f.className = 'fach hat neu'; $('b', f).textContent = b.name; $('small', f).textContent = 'Neu in deinem Kasten';
+      f.className = 'fach hat neu'; $('b', f).textContent = b.name; $('small', f).textContent = 'Neu in deinem Setzkasten';
       funken(f, b.c); setTimeout(() => { location.hash = 'kasten-' + b.id; }, 900);
     });
   }
@@ -417,7 +467,11 @@
     const hoer = $('.hoer', v); if (hoer) hoer.onclick = () => speak(b.en, 'en-GB');
     setTimeout(() => $('.stage', v).classList.add('gleam'), 300);
   }
-  const paintJuwelen = () => { const k = $('#kastenBtn'); if (k) k.textContent = `Setzkasten · ${spiel.juwelen}`; };
+  const paintJuwelen = () => {
+    const k = $('#kastenBtn'); if (k) k.textContent = `Setzkasten · ${spiel.juwelen}`;
+    const l = $('#vitrine'); if (l) l.innerHTML = vitrineLeiste();
+  };
+  $('#vitrine').onclick = () => { location.hash = 'kasten'; };
   $('#kastenBtn').onclick = () => { location.hash = 'kasten'; };
   paintJuwelen();
 
@@ -473,6 +527,14 @@
 
   const pp = $('#paypal');
   if (pp && /^https:\/\/(www\.)?paypal\.(me|com)\//.test(window.PAYPAL || '')) { pp.href = window.PAYPAL; pp.hidden = false; }
+
+  // Tagesbonus: wächst, wenn man mehrere Tage hintereinander kommt
+  if (spiel.tag !== heute()) {
+    const g = new Date(); g.setDate(g.getDate() - 1); const gestern = `${g.getFullYear()}-${g.getMonth() + 1}-${g.getDate()}`;
+    spiel.tage = spiel.tag === gestern ? spiel.tage + 1 : 1; spiel.tag = heute();
+    const n = 10 + Math.min(5, spiel.tage - 1) * 2;
+    setTimeout(() => gib(n, spiel.tage > 1 ? `Tagesbonus · ${spiel.tage} Tage in Folge` : 'Tagesbonus'), 900);
+  }
 
   renderChips(); renderGrid(); route();
 })();

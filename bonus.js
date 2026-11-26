@@ -1,30 +1,32 @@
-// Steine für den Setzkasten: mit Juwelen aus dem Spiel zu kaufen
+// Steine für den Setzkasten: mit Juwelen zu kaufen (r = Rätsel-Hinweis vor dem Kauf)
 window.BONUS = [
  {
   "id": "citrin",
   "name": "Citrin",
   "c": "#e0a92a",
-  "preis": 40,
+  "preis": 30,
   "en": "Citrine",
   "b": "Lateinisch „citrus“: die Zitrone",
   "n": "Nach der Zitrone, wegen seiner gelben Farbe.",
   "info": "Citrin ist gelber Quarz und die Schwester des Amethysts. Im seltenen Ametrin wachsen beide zusammen in einem einzigen Kristall: halb violett, halb gelb.",
   "autor": "Darla Sondrol",
   "lizenz": "CC0",
-  "url": "https://commons.wikimedia.org/wiki/File:Citrine_(GeoDIL_number_-_1785).jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:Citrine_(GeoDIL_number_-_1785).jpg",
+  "r": "Gelb wie eine Zitrone"
  },
  {
   "id": "pyrit",
   "name": "Pyrit",
   "c": "#b89a3c",
-  "preis": 50,
+  "preis": 45,
   "en": "Pyrite",
   "b": "Griechisch „pyr“: das Feuer",
   "n": "Vom griechischen Wort für Feuer, denn mit Pyrit kann man Funken schlagen.",
   "info": "Pyrit heißt auch Katzengold oder Narrengold, weil er Goldsucher täuschte. Er wächst von ganz allein in fast perfekten Würfeln.",
   "autor": "Vassil",
   "lizenz": "Public domain",
-  "url": "https://commons.wikimedia.org/wiki/File:Pyrite_60608.jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:Pyrite_60608.jpg",
+  "r": "Wächst in Würfeln und täuschte Goldsucher"
  },
  {
   "id": "achat",
@@ -37,123 +39,133 @@ window.BONUS = [
   "info": "Achat wächst in Blasen erkalteter Lava, Schicht um Schicht von außen nach innen. Jeder Streifen ist eine neue Lage. Onyx und Karneol gehören zur selben Familie.",
   "autor": "Ra'ike",
   "lizenz": "CC BY-SA 3.0",
-  "url": "https://commons.wikimedia.org/wiki/File:Quartz_-_Agateplate,_bluegrey.JPG"
+  "url": "https://commons.wikimedia.org/wiki/File:Quartz_-_Agateplate,_bluegrey.JPG",
+  "r": "Streifen wie Baumringe, gewachsen in Lava"
  },
  {
   "id": "bernstein",
   "name": "Bernstein",
   "c": "#d98a1f",
-  "preis": 70,
+  "preis": 75,
   "en": "Amber",
   "b": "Der „Brennstein“, von niederdeutsch „bernen“: brennen",
   "n": "Aus dem Niederdeutschen: „bernen“ heißt brennen. Bernstein lässt sich tatsächlich anzünden.",
   "info": "Bernstein ist gar kein Stein, sondern Millionen Jahre altes Baumharz. Manchmal steckt ein Insekt darin. In Salzwasser schwimmt er, deshalb spült die Ostsee ihn an den Strand.",
   "autor": "James St. John",
   "lizenz": "CC BY 2.0",
-  "url": "https://commons.wikimedia.org/wiki/File:Amber_(resinite)_(Baltics)_4.jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:Amber_(resinite)_(Baltics)_4.jpg",
+  "r": "Kein Stein, sondern uraltes Harz"
  },
  {
   "id": "malachit",
   "name": "Malachit",
   "c": "#1e8a55",
-  "preis": 80,
+  "preis": 90,
   "en": "Malachite",
   "b": "Griechisch „maláchē“: die Malve",
   "n": "Nach der Malve, deren Blätter dasselbe satte Grün haben.",
   "info": "Malachit ist ein Kupfermineral. Zu Pulver zerrieben war er jahrtausendelang grüne Malfarbe und im alten Ägypten sogar Lidschatten.",
   "autor": "W.carter",
   "lizenz": "CC BY 4.0",
-  "url": "https://commons.wikimedia.org/wiki/File:Tumbled_malachite_gemstone_2.jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:Tumbled_malachite_gemstone_2.jpg",
+  "r": "Grün gebändert, einst Lidschatten"
  },
  {
   "id": "tuerkis",
   "name": "Türkis",
   "c": "#2fb5b0",
-  "preis": 90,
+  "preis": 110,
   "en": "Turquoise",
   "b": "Französisch „pierre turquoise“: türkischer Stein",
   "n": "Französisch für „türkischer Stein“. Er kam aus Persien über die Türkei nach Europa.",
   "info": "Hier gab der Stein der Farbe den Namen, nicht umgekehrt. Die dunklen Adern heißen Matrix und sind Reste des Gesteins, in dem er gewachsen ist.",
   "autor": "Adrian Pingstone",
   "lizenz": "Public domain",
-  "url": "https://commons.wikimedia.org/wiki/File:Turquoise.pebble.700pix.jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:Turquoise.pebble.700pix.jpg",
+  "r": "Gab einer Farbe ihren Namen"
  },
  {
   "id": "obsidian",
   "name": "Obsidian",
   "c": "#3b3f47",
-  "preis": 100,
+  "preis": 130,
   "en": "Obsidian",
   "b": "Nach dem Römer Obsius, der ihn entdeckt haben soll",
   "n": "Plinius der Ältere schreibt, ein Römer namens Obsius habe den Stein in Äthiopien gefunden.",
   "info": "Obsidian ist Glas aus dem Vulkan: Lava, die so schnell erkaltet ist, dass keine Kristalle wachsen konnten. Seine Bruchkanten sind schärfer als ein Skalpell aus Stahl.",
   "autor": "James St. John",
   "lizenz": "CC BY 2.0",
-  "url": "https://commons.wikimedia.org/wiki/File:Obsidian_%26_devitrified_obsidian_gravel_(Obsidian_Cliff,_Yellowstone,_Wyoming,_USA)_4.jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:Obsidian_%26_devitrified_obsidian_gravel_(Obsidian_Cliff,_Yellowstone,_Wyoming,_USA)_4.jpg",
+  "r": "Glas aus dem Vulkan"
  },
  {
   "id": "fluorit",
   "name": "Fluorit",
   "c": "#3aa7c9",
-  "preis": 110,
+  "preis": 150,
   "en": "Fluorite",
   "b": "Lateinisch „fluere“: fließen",
   "n": "Vom lateinischen „fluere“, fließen. In der Hütte ließ er Erz leichter schmelzen, daher heißt er auch Flussspat.",
   "info": "Fluorit gab einem ganzen Phänomen den Namen: der Fluoreszenz. Viele Stücke leuchten unter UV-Licht blau.",
   "autor": "Giovanni Dall'Orto",
   "lizenz": "CC BY-SA 2.5 it",
-  "url": "https://commons.wikimedia.org/wiki/File:9104_-_Milano_-_Museo_storia_naturale_-_Fluorite_-_Foto_Giovanni_Dall%27Orto_22-Apr-2007.jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:9104_-_Milano_-_Museo_storia_naturale_-_Fluorite_-_Foto_Giovanni_Dall%27Orto_22-Apr-2007.jpg",
+  "r": "Leuchtet unter UV-Licht"
  },
  {
   "id": "rhodochrosit",
   "name": "Rhodochrosit",
   "c": "#e0607e",
-  "preis": 120,
+  "preis": 175,
   "en": "Rhodochrosite",
   "b": "Griechisch für „rosenfarben“",
   "n": "Aus dem Griechischen: „rhódon“ ist die Rose, „chrṓs“ die Farbe.",
   "info": "Er ist der Nationalstein Argentiniens und heißt dort „Inkarose“. Seine rosa Ringe wachsen wie Baumringe und verdanken ihre Farbe dem Mangan.",
   "autor": "Ra'ike",
   "lizenz": "CC BY 3.0",
-  "url": "https://commons.wikimedia.org/wiki/File:Rhodochrosite_-_tumble_polished_stone.jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:Rhodochrosite_-_tumble_polished_stone.jpg",
+  "r": "Rosa Ringe, die Rose der Inka"
  },
  {
   "id": "saphir",
   "name": "Saphir",
   "c": "#2247b8",
-  "preis": 130,
+  "preis": 200,
   "en": "Sapphire",
   "b": "Griechisch „sáppheiros“: blauer Stein",
   "n": "Vom griechischen „sáppheiros“. In der Antike meinte man damit vermutlich noch den Lapislazuli.",
   "info": "Saphir und Rubin sind dasselbe Mineral: Korund. Ist er rot, heißt er Rubin, in jeder anderen Farbe Saphir. Es gibt also auch gelbe, rosa und grüne Saphire.",
   "autor": "W.carter",
   "lizenz": "CC BY 4.0",
-  "url": "https://commons.wikimedia.org/wiki/File:Four_man-made_faceted_blue_sapphires_3.jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:Four_man-made_faceted_blue_sapphires_3.jpg",
+  "r": "Der Bruder des Rubins"
  },
  {
   "id": "smaragd",
   "name": "Smaragd",
   "c": "#1f9d63",
-  "preis": 140,
+  "preis": 230,
   "en": "Emerald",
   "b": "Griechisch „smáragdos“: grüner Stein",
   "n": "Über das Lateinische aus dem griechischen „smáragdos“, das einfach einen grünen Stein meinte.",
   "info": "Smaragd ist grüner Beryll und damit der große Bruder des Aquamarins. Fast jeder Smaragd hat feine Einschlüsse. Juweliere nennen sie liebevoll „jardin“, den Garten im Stein.",
   "autor": "James St. John",
   "lizenz": "CC BY 2.0",
-  "url": "https://commons.wikimedia.org/wiki/File:Emerald-calcite-pyrite_on_carbonaceous_shale_(Muzo_Hydrothermal_Emerald_Deposit;_Muzo_area,_Boyaca,_Colombia)_(32688929206).jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:Emerald-calcite-pyrite_on_carbonaceous_shale_(Muzo_Hydrothermal_Emerald_Deposit;_Muzo_area,_Boyaca,_Colombia)_(32688929206).jpg",
+  "r": "Trägt einen Garten in sich"
  },
  {
   "id": "diamant",
   "name": "Diamant",
   "c": "#9fb6c9",
-  "preis": 150,
+  "preis": 260,
   "en": "Diamond",
   "b": "Griechisch „adámas“: der Unbezwingbare",
   "n": "Vom griechischen „adámas“, unbezwingbar, weil ihn nichts ritzen konnte.",
   "info": "Diamant ist das härteste natürliche Mineral und besteht aus reinem Kohlenstoff, genau wie die Mine eines Bleistifts. Nur sind die Atome anders gestapelt.",
   "autor": "Petragems",
   "lizenz": "CC BY-SA 4.0",
-  "url": "https://commons.wikimedia.org/wiki/File:Round_Brilliant_Cut_Diamond.jpg"
+  "url": "https://commons.wikimedia.org/wiki/File:Round_Brilliant_Cut_Diamond.jpg",
+  "r": "Der Härteste von allen"
  }
 ];
